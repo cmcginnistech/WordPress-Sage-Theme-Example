@@ -1,0 +1,96 @@
+.post-type-archive-glossary {
+  .wrap {
+    overflow: initial;
+  }
+  .glossary-nav {
+    font-size: 0.9em;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+    .expanded-nav {
+      padding-top: 5px;
+    }
+    .glossary-nav__title {
+      margin-right: 16px;
+    }
+    .sort-filter-select-label,
+    .sort-filter-select .dropdown-toggle {
+      margin-left: 0;
+      margin-right: 0;
+      max-width: 100%;
+      a {
+        color: $purple;
+      }
+    }
+    ul {
+      li {
+        padding: 0px 8px;
+        font-weight: bold;
+        color: $light-gray;
+        a {
+          color: $purple;
+          &:hover {
+            color: $royal-blue;
+          }
+        }
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        border-bottom: 2px solid $light-gray;
+        width: calc(100% - 30px);
+      }
+    }
+  }
+  .row--single-letter-wrapper {
+    display: flex;
+
+    .glossary-left-column {
+      padding-right: 0px;
+      text-align: center;
+      flex: 1 1 15%;
+      h2 {
+        font-size: 2.75em;
+        position: sticky;
+        top: 50px;
+        color: $purple;
+      }
+
+      @media (min-width: $screen-sm) {
+        padding-right: 20px;
+        text-align: right;
+        h2 {
+          top: 35px;
+        }
+      }
+    }
+    .glossary-right-column {
+      flex: 1 1 85%;
+      border-left: 2px solid $light-gray;
+      margin-bottom: 4rem;
+      .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      h3 {
+        margin-top: 0;
+        color: $purple;
+      }
+    }
+  }
+
+  form.glossary-search {
+    position: relative;
+    @media (max-width: $screen-sm) {
+      .input-group-append {
+        top: 67%;
+      }
+    }
+  }
+  .row--glossary-credit {
+    padding: 30px;
+  }
+}

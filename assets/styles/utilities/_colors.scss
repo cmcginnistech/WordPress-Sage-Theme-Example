@@ -1,0 +1,36 @@
+// Generates single-purpose utility classes for background and text colors, which can be applied to HTML elements directly or to another selector through @extend directive.
+// Examples: "text-dark-blue", "text-white", etc...
+
+$colors: (
+black: $black,
+purple: $purple,
+  royal-blue: $royal-blue,
+  moody-blue: $moody-blue,
+  periwinkle: $periwinkle,
+  wild-blue: $wild-blue,
+  storm-gray: $storm-gray,
+  mid-gray: $mid-gray,
+  light-gray: $light-gray,
+  lighter-gray: $lighter-gray,
+  white: $white
+);
+
+@each $key, $val in $colors {
+  .bg-#{$key} {
+    background-color: $val;
+  }
+
+  .text-#{$key} {
+    color: $val;
+  }
+
+  .interact-#{$key} {
+    &:hover, &:focus {
+      color: $val;
+    }
+  }
+}
+
+.text-inherit {
+  color: inherit;
+}

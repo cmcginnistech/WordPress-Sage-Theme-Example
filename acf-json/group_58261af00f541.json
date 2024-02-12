@@ -1,0 +1,48 @@
+{
+    "key": "group_58261af00f541",
+    "title": "Component: Basic Text",
+    "fields": [
+        {
+            "key": "field_58261afc96eab",
+            "label": "Text",
+            "name": "text",
+            "type": "wysiwyg",
+            "instructions": "If this is the first component on a page, make sure you begin your Headings with an H2 as H1 is reserved for the page title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1519843838
+}

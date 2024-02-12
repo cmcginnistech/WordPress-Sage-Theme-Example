@@ -1,0 +1,124 @@
+html,
+body {
+  font-size: $size-root-xs;
+  @media (min-width: $screen-sm) {
+    font-size: $size-root;
+  }
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: $sans-serif;
+  background-color: lighten($brand-primary, 5%);
+  color: #333333;
+
+  &.admin-bar {
+    min-height: calc(100vh - #{$admin-bar-height});
+  }
+}
+
+a {
+  transition: color 0.2s ease;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+p {
+  line-height: 1.75em;
+  @media (min-width: $screen-sm) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $brand-primary;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+dt {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+mark {
+  padding: 0;
+}
+
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  :first-child {
+    margin-top: 0; // Remove normal margin-top from things like headings.
+  }
+
+  :last-child {
+    margin-bottom: 0; // Removal normal margin-bottom from things like paragraphs.
+  }
+}
+
+blockquote {
+  border-color: $lighter-gray;
+}
+
+svg {
+  vertical-align: middle;
+}
+
+// [a11y] suppress visible focus indication on the skip-to-content link target
+// http://getbootstrap.com/getting-started/#skip-navigation
+#main:focus {
+  outline: none;
+}
+
+.scroll-to-top {
+  position: fixed;
+  display: none;
+  bottom: 15px;
+  right: 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  padding-top: 12px;
+  transition: background-color 200ms ease;
+  z-index: 1020; // so it is above dropdown menus
+  svg {
+    fill: white;
+    opacity: 0.9;
+    transform: rotate(-90deg);
+  }
+  &:hover,
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.5);
+    svg {
+      opacity: 1;
+    }
+  }
+  @media (min-width: $screen-sm) {
+    width: 35px;
+    height: 35px;
+    padding-top: 6px;
+  }
+}

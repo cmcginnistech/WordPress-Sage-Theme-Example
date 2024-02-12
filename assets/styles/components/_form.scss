@@ -1,0 +1,4 @@
+.component--form .form-wrapper {
+  @include make-sm-column(8);
+  @include make-sm-column-offset(2);
+}

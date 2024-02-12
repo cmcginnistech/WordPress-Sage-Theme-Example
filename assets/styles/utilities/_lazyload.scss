@@ -1,0 +1,89 @@
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.no-js .lazyload {
+  opacity: 1;
+}
+
+// Loading Icon
+.loading::before {
+  display: block;
+  border: 3px solid $white;
+  border-radius: 100%;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  border-color: transparent transparent $white $white !important;
+  height: 1.5rem;
+  width: 1.5rem;
+  position: absolute;
+  overflow: auto;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  opacity: 0.6 !important;
+  content: "";
+  animation: spinAround 600ms infinite linear;
+}
+
+#ajaxLoading::before {
+  display: none;
+}
+
+@keyframes spinAround {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+// Intrinsic ratio containers.
+// https://github.com/aFarkas/lazysizes#tip-specifying-image-dimensions-minimizing-reflows-and-avoiding-page-jumps
+.ratio-container {
+  position: relative;
+  overflow: hidden;
+  &:after {
+    display: block;
+    background-color: $light-gray;
+    height: 0;
+    width: 100%;
+    content: "";
+  }
+
+  > * {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.ratio-container {
+  // "thumb-square"
+  &--thumb-square::after {
+    padding-top: 100%;
+  }
+
+  // "thumb-portrait"
+  &--thumb-portrait::after {
+    padding-top: calc(420 / 360 * 100%);
+  }
+
+  // "thumb-landscape"
+  &--thumb-landscape::after {
+    padding-top: calc(315 / 430 * 100%);
+  }
+}

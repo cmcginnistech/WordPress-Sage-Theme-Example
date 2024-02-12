@@ -1,0 +1,185 @@
+@media (min-width: $screen-lg) {
+  .artwork-group--main .inner-pad {
+    padding: 3rem;
+  }
+}
+
+.artwork-group--main h3 {
+  @extend .size-h2;
+}
+
+.component--artwork-grouping {
+  @include clearfix;
+  .artwork-group {
+    @media (max-width: $screen-lg) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .artwork-group__heading {
+      width: 100%;
+    }
+    .content-text {
+      padding-left: 10px;
+      width: 100%;
+      @media (min-width: $screen-md) {
+        margin-left: 10%;
+        width: 80%;
+        padding-left: 0px;
+      }
+    }
+  }
+  .artwork-group--main {
+    clear: left;
+    width: calc(50% - 16px);
+    margin-right: 8px;
+    margin-left: 8px;
+    margin-bottom: 16px;
+    float: left;
+    @media (max-width: $screen-lg - 1) {
+      width: calc(100% - 24px);
+    }
+    @media (max-width: $screen-sm - 1) {
+      width: calc(100% - 16px);
+    }
+
+    .artwork--ration-container {
+      img {
+        position: relative;
+      }
+      &:after {
+        display: none;
+      }
+    }
+
+    &.full {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      @media (max-width: $screen-lg - 1) {
+        width: calc(100% - 24px);
+      }
+      @media (max-width: $screen-sm - 1) {
+        width: calc(100% - 16px);
+      }
+      > div {
+        width: 100%;
+      }
+
+      .artwork-wrapper {
+        width: 100%;
+        margin: 0;
+      }
+
+      @media (min-width: $screen-lg) {
+        // min-height: 653px;
+      }
+      @media (min-width: $screen-sm) {
+        display: flex;
+        min-height: auto;
+
+        > div {
+          width: calc(50% - 2px);
+          margin: 0 8px;
+          @media (max-width: $screen-lg) {
+            margin: 0 8px 0 0;
+          }
+        }
+
+        .artwork-wrapper {
+          width: 50%;
+          margin-left: 8px;
+          margin-right: 8px;
+          @media (max-width: $screen-lg) {
+            margin-right: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .artwork-group--main .inner-pad {
+    padding: 2rem;
+    @media (min-width: $screen-lg) {
+      // min-height: 644px;
+      min-height: 534px;
+    }
+  }
+  .artwork-group--main.full .inner-pad {
+    @media (min-width: $screen-lg) {
+      min-height: auto;
+    }
+  }
+  .artwork-group--item,
+  .artwork-group--sub {
+    position: relative;
+    float: left;
+    width: calc(25% - 16px);
+    // min-height: 314px;
+    min-height: 259px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 16px;
+    @media (max-width: $screen-lg - 1) {
+      width: calc(33% - 16px);
+    }
+    @media (max-width: $screen-sm - 1) {
+      min-height: 0;
+      width: calc(50% - 16px);
+    }
+  }
+  .artwork-group--sub {
+    background-color: $purple;
+    color: $white;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (max-width: $screen-sm - 1) {
+      min-height: 0;
+      width: calc(100% - 16px);
+    }
+    h4 {
+      color: $white;
+      font-size: 1.5rem;
+    }
+
+    .icon-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      bottom: 10px;
+      right: 10px;
+      border: 2px solid $periwinkle;
+      border-radius: 50%;
+      transition: border-color 0.3s ease-in-out;
+    }
+
+    .icon-info svg {
+      fill: $periwinkle;
+      transition: fill 0.3s ease-in-out;
+    }
+
+    a:hover,
+    a:focus {
+      .icon-info {
+        border-color: $white;
+      }
+
+      .icon-info svg {
+        fill: $white;
+      }
+    }
+
+    a:focus {
+      outline: 0;
+    }
+  }
+}
+
+.artwork-group {
+  @include make-lg-column-offset(1);
+  @include make-lg-column(10, 0);
+}

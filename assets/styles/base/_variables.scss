@@ -1,0 +1,66 @@
+// Grid settings
+$grid-float-breakpoint: 992px;
+
+$main-sm-columns: 12;
+$sidebar-sm-columns: 4;
+$navbar-height: 132px;
+$admin-bar-height: 32px;
+$site-max-width: 1600px;
+$offset-hero-offset--mobile: $navbar-height;
+$offset-hero-offset--default: $navbar-height;
+
+// Fonts
+$serif: "Georgia", serif;
+$sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Helvetica Neue", Arial, sans-serif;
+
+// Sizes
+$size-root-xs: 14px;
+$size-root: 16px;
+$size-yuge: 4rem; // 64px
+$size-h1-plus: 3.5rem; // 56px
+$size-h1: 2.75rem; // 44px
+$size-h2: 2.25rem; // 36px
+$size-h3: 1.75rem; // 28px
+$size-h4: 1.5rem; // 24px
+
+// Colors
+$black: #202020;
+$purple: #1d214f;
+$light-purple: #2c3065;
+$royal-blue: #555dd9;
+$moody-blue: #7c83d2;
+$wild-blue: #888bbd;
+$periwinkle: #8f92c6;
+$light-periwinkle: #bcbedd;
+$dark-gray: #1c1d21;
+$storm-gray: #70728e;
+$light-storm-gray: #d4d4e4;
+$mid-gray: #0e0c0c;
+$light-gray: #d4d5e3;
+$lighter-gray: #f0f0f5;
+$white: #ffffff;
+
+// Bootstrap Overrides
+$brand-primary: $purple;
+$link-color: $royal-blue;
+
+// Dropdowns
+$dropdown-link-color: $white;
+$dropdown-header-color: $white;
+$dropdown-link-hover-color: $white;
+$dropdown-link-hover-bg: transparent;
+$dropdown-link-active-bg: transparent;
+$nav-link-hover-bg: transparent;
+
+// Tachyons overrides (make sure they match bootstrap's breakpoints)
+$breakpoint-not-small: "screen and (min-width: 768px)";
+$breakpoint-medium: "screen and (min-width: 768px) and (max-width: 991px)";
+$breakpoint-large: "screen and (min-width: 992px)";
+
+// Bootstrap Select
+$color-red-error: rgb(185, 74, 72);
+$color-grey-arrow: rgba(204, 204, 204, 0.2);
+$width-default: 220px; // 3 960px-grid columns
+$zindex-select-dropdown: 1060; // must be higher than a modal background (1050)
+$input-color-placeholder: #999; // Placeholder text color

@@ -1,0 +1,39 @@
+.single-video {
+  h1 {
+    margin-top: 0;
+    color: $purple;
+  }
+  p {
+    strong {
+      color: $purple;
+    }
+  }
+}
+
+.video-stage {
+  background-color: $dark-gray;
+  padding-top: 120px;
+}
+
+.video__related-content {
+  margin-top: 2rem;
+  strong {
+    text-transform: uppercase;
+    color: $royal-blue;
+    font-size: 0.8em;
+  }
+  > ul {
+    list-style: none;
+    padding-left: 0;
+    li {
+      margin: 10px 0px;
+    }
+    a {
+      color: $purple;
+      font-size: 1.4em;
+    }
+  }
+  @media (min-width: $screen-sm) {
+    margin-top: 0;
+  }
+}

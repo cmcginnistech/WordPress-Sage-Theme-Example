@@ -1,0 +1,605 @@
+.posts-wrapper {
+  &[data-context="videos"] {
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+  }
+  &[data-context="bibliography"] {
+    .row {
+      .bibliography-date {
+        color: $royal-blue;
+        font-weight: bold;
+        font-size: $size-root-xs;
+      }
+    }
+  }
+}
+
+.partial {
+  a {
+    color: $purple;
+    transition: all 0.2s ease-in;
+    &:hover {
+      color: $royal-blue;
+      text-decoration: underline;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+    }
+  }
+  > [class^="cs"] {
+    position: static;
+  }
+  &--artist {
+    line-height: 1.8em;
+    .first-col {
+      position: initial;
+    }
+    .birth-death {
+      display: flex;
+      align-items: flex-start;
+      color: $storm-gray;
+    }
+    .birth-death__bpy {
+      flex: initial;
+    }
+    .birth-death__dpy {
+      flex: initial;
+    }
+    .birth-death__sep {
+      margin: 0 0.625rem;
+    }
+    .works {
+      text-align: left;
+      strong {
+        color: $royal-blue;
+        font-weight: 700;
+        margin-right: 0.5em;
+      }
+    }
+    @media (min-width: $screen-sm) {
+      .birth-death {
+        align-items: center;
+        font-size: $size-root-xs;
+      }
+      .birth-death__bpy {
+        flex: 1;
+        text-align: right;
+      }
+      .birth-death__dpy {
+        flex: 1;
+      }
+      .birth-death__sep {
+        margin: 0 0.625rem;
+      }
+      .works {
+        text-align: right;
+        font-size: $size-root-xs;
+      }
+    }
+  }
+  &--video {
+    width: 100%;
+    padding: 15px;
+    .video-icon {
+      display: flex;
+      align-items: center;
+      color: $royal-blue;
+      text-decoration: underline;
+      svg {
+        margin-left: 5px;
+        fill: $royal-blue;
+      }
+    }
+    a {
+      &:hover,
+      &:focus {
+        color: $purple;
+        .video-icon {
+          svg {
+            animation: bounceRight 1s 1;
+          }
+        }
+      }
+    }
+    @media (min-width: $screen-sm) {
+      width: 25%;
+    }
+  }
+}
+
+.archive-filter-header,
+.partial {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    width: calc(100% - 30px);
+    border-bottom: 2px solid $lighter-gray;
+  }
+}
+
+.partial--bibliography {
+  padding: 2rem 0;
+  margin-bottom: 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+  .first-col {
+    position: initial;
+  }
+  .excerpt {
+    margin-left: 30px;
+    text-indent: -30px;
+  }
+}
+
+.partial--staff,
+.partial--entry_author {
+  padding: 0 0 2rem 0;
+  margin-bottom: 2rem;
+  @media (min-width: $screen-sm) {
+    padding: 1rem 0 3rem 0;
+    &:after {
+      width: calc(83.4% - 30px);
+      left: 9.6%;
+    }
+  }
+}
+
+// Form styling //
+.archive-filter-header,
+.archive-video-filter,
+.glossary-nav,
+.bibliography-nav {
+  .sort-filter-select,
+  .sort-filter-select-label {
+    display: none;
+    margin: 0px 15px;
+    width: calc(100% - 30px);
+  }
+  .sort-filter-select-label {
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
+  .sort-filter-select {
+    .dropdown-toggle {
+      margin: 0px 15px;
+      max-width: calc(100% - 30px);
+      color: $purple;
+      border-bottom: 2px solid $light-periwinkle;
+      transition: all 0.2s ease-in;
+      font-weight: 500;
+      &:hover,
+      &:focus {
+        border-bottom: 2px solid $periwinkle;
+        color: $purple;
+      }
+      .bs-caret {
+        content: url("../images/icon/caret-down.svg");
+      }
+    }
+    .disabled a {
+      color: $lighter-gray;
+    }
+  }
+  .sort-filter {
+    display: inline-block;
+    font-size: $size-root-xs;
+  }
+  .bootstrap-select.sort-filter-select,
+  .sort-filter-select-label {
+    display: none;
+  }
+  @media (max-width: $screen-sm) {
+    .sort-filter {
+      display: none;
+    }
+    .bootstrap-select.sort-filter-select {
+      display: inline-block;
+    }
+    .sort-filter-select-label {
+      display: block;
+    }
+  }
+}
+.archive-search {
+  width: 100%;
+  @media (min-width: $screen-sm) {
+    width: auto;
+    display: flex;
+    align-items: flex-end;
+  }
+}
+.archive-video-filter {
+  width: 100%;
+  .filter-item {
+    margin: 0;
+  }
+  .btn.dropdown-toggle {
+    margin: 0 0 30px 0;
+    max-width: 100%;
+  }
+  .sort-filter-select-label {
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+  .bootstrap-select.sort-filter-select {
+    display: inline-block;
+  }
+  .sort-filter-select-label {
+    display: block;
+  }
+  @media (min-width: $screen-sm) {
+    width: auto;
+    .btn.dropdown-toggle {
+      margin: 0;
+    }
+  }
+}
+.archive-filter-header {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  a {
+    color: $purple;
+  }
+  &:after {
+    border-color: $light-periwinkle;
+  }
+  $col-wide: 20.9%;
+  $col-compensate: calc(33% - #{$col-wide});
+  .col-width-wide {
+    width: $col-wide;
+  }
+  .col-width-compensate {
+    width: $col-compensate;
+  }
+  @media (max-width: $screen-sm) {
+    &.artist,
+    &.video,
+    &.bibliography_entry {
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &.bibliography_entry {
+    .bibliography-date {
+      text-align: center;
+    }
+  }
+}
+.sort-filter {
+  position: relative;
+  padding-right: 21px;
+  .sort-handle {
+    position: absolute;
+    right: 0px;
+    top: calc(50% - 7px);
+    width: 14px;
+    height: 14px;
+    &.unsorted {
+      background: transparent url("../images/icon/sort-icon.svg") center center;
+      background-size: cover;
+    }
+    &.sorted {
+      background: transparent url("../images/icon/sort-icon-sorted.svg") center
+        center;
+      background-size: cover;
+      transition: transform 0.5s ease;
+      &.up {
+        transform: scaley(-1);
+      }
+    }
+  }
+}
+
+.searchwp-highlight {
+  background-color: #fff6ea;
+}
+
+.page-header--press {
+  background-color: $purple;
+  margin-bottom: 2rem;
+
+  h1:after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: $royal-blue;
+    display: block;
+    margin: 0.625rem 0 1rem 0;
+  }
+  #js-search {
+    color: white;
+    border-color: $storm-gray;
+    background-color: transparent !important;
+    &:focus {
+      border-color: white;
+    }
+  }
+  #js-search::placeholder {
+    color: $white;
+  }
+  @media (min-width: $screen-sm) {
+    padding-bottom: 3rem;
+  }
+}
+
+.bg-purple .filter-item.search-form,
+.page-header--press .filter-item.search-form {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url("../images/ui/icon-search-light.svg");
+    background-size: 16px 16px;
+    z-index: 5;
+  }
+}
+
+.archive-subtitle {
+  @extend .serif;
+  color: white;
+  font-size: 1.125rem;
+  display: block;
+}
+
+.page-header--exhibition {
+  .container {
+    position: relative;
+    padding-top: $offset-hero-offset--mobile;
+    & > * {
+      position: relative;
+      z-index: 11;
+    }
+    @media (min-width: $screen-sm) {
+      padding-top: $offset-hero-offset--default;
+    }
+  }
+}
+
+.exb-header-graphic {
+  position: absolute !important;
+  bottom: 0;
+  right: 15px;
+  z-index: 0 !important;
+  @media (min-width: $screen-sm) {
+    bottom: -2rem;
+  }
+}
+
+.excerpt {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+#js-posts-load-more {
+  height: 50px;
+
+  &.loading {
+    background: url("../images/loading.svg") center no-repeat;
+    background-size: 50px 50px;
+    &:before {
+      display: none;
+    }
+  }
+
+  &[data-finished="true"] {
+    display: none;
+  }
+}
+.bibliography-nav {
+  font-size: 0.9em;
+  z-index: 1;
+  margin-bottom: 2rem;
+  .expanded-nav {
+    padding-top: 5px;
+  }
+  .bibliography-nav__title {
+    margin-right: 16px;
+  }
+  .sort-filter-select-label,
+  .sort-filter-select .dropdown-toggle {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    a {
+      color: $purple;
+    }
+  }
+  ul {
+    li {
+      padding: 0px 8px;
+      font-weight: bold;
+      color: $light-gray;
+      a {
+        color: $purple;
+        &:hover {
+          color: $royal-blue;
+        }
+      }
+    }
+  }
+}
+
+// Essays
+.post-type-archive-essay {
+  .page-header {
+    @media (min-width: $screen-sm) {
+      padding: 5rem 0 2rem;
+    }
+  }
+}
+.theme {
+  position: relative;
+  padding: 3.5rem 3rem;
+  background-color: $purple;
+  color: $white;
+  @extend .mb3;
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    &.bg-cover-overlay:after {
+      background-image: none;
+    }
+  }
+
+  &__bg--underlayer {
+    opacity: 0;
+    transition: opacity 0.3s 0.3s ease-in;
+
+    &.lazyloaded {
+      opacity: 1;
+    }
+  }
+
+  &__bg[data-bg-matrix] {
+    transition: opacity 0.3s ease-in-out;
+
+    .active & {
+      opacity: 0;
+    }
+  }
+
+  &__bg[data-bg-matrix]::after {
+    height: 100%;
+  }
+
+  &__title {
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    max-width: 400px;
+  }
+
+  &__toggle {
+    margin-top: 2.5rem;
+    padding: 0;
+    border: 0;
+    font-size: 1.125rem;
+    background-color: transparent;
+    @extend .serif;
+
+    svg {
+      position: relative;
+      left: 1rem;
+    }
+  }
+
+  &__toggle[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+
+  &:last-of-type {
+    margin-bottom: 6rem;
+  }
+}
+
+.theme:hover .theme__bg[data-bg-matrix] {
+  opacity: 0;
+}
+
+.theme .essay {
+  position: relative;
+  padding: 1.5rem 0;
+  color: $white;
+
+  &:first-of-type {
+    margin-top: 2.5rem;
+  }
+
+  &:not(:last-of-type)::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 375px;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    opacity: 0.5;
+    content: "";
+  }
+
+  &__title,
+  &__author,
+  &__link {
+    color: inherit;
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+}
+
+//Fallback for IE
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .theme {
+    &:hover,
+    &.active {
+      .theme__bg--underlayer::after {
+        opacity: 0;
+      }
+    }
+    &__bg--underlayer {
+      opacity: 0;
+
+      &.lazyloaded {
+        opacity: 1;
+      }
+
+      &::after {
+        background-color: $purple;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        z-index: 0;
+        width: 100%;
+        opacity: 0.7;
+        height: 100%;
+        transition: opacity 0.2s ease-in;
+      }
+    }
+    .theme__bg[data-bg-matrix] {
+      display: none;
+    }
+  }
+}

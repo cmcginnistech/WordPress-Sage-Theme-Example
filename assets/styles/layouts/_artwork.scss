@@ -1,0 +1,138 @@
+.artwork-stage {
+  padding: 2.5rem 15px;
+  background-color: $lighter-gray;
+  text-align: center;
+
+  img {
+    max-height: 550px;
+    width: auto;
+  }
+  .single-group & img {
+    max-height: 400px;
+  }
+  @media (min-width: $screen-sm) {
+    .overlay-content.overlay-content--center {
+      max-width: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.artwork-stage-inner-flex-wrap {
+  display: flex;
+  justify-content: center;
+
+  .group-stage-item {
+    margin: 0 .5rem;
+  }
+  @media (max-width: $screen-sm - 1) {
+    &.flex-wrap {
+      align-items: center;
+      .group-stage-item {
+        width: calc(25% - 1rem);
+        flex: auto !important;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+      }
+    }
+  }
+}
+
+.single-artwork-artist-info {
+  line-height: 1.4;
+  margin-bottom: 1rem;
+
+  .artist {
+    @extend .serif;
+    color: $purple;
+    font-size: 2rem;
+  }
+  .artist-dates {
+    color: $storm-gray;
+  }
+  p {
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+.tombstone {
+  color: $purple;
+
+  dd {
+    margin-bottom: .25rem;
+  }
+  p {
+    margin: 0;
+  }
+  .currently-on-view {
+    margin-top: 1rem;
+  }
+}
+
+.group-module {
+  border-top: 2px solid $lighter-gray;
+  padding-top: 1.5rem;
+
+  strong {
+    color: $purple;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1.25rem;
+    font-size: $size-root-xs;
+  }
+  img {
+    max-width: 40px;
+  }
+  img + div {
+    margin-top: -6px;
+  }
+  a {
+    color: $purple;
+    .title {
+      @extend .serif;
+      font-size: 1.125rem;
+      display: block;
+    }
+    .artist {
+      @extend .sans-serif;
+      color: $mid-gray;
+      margin-top: -4px;
+    }
+    &:hover, &:focus {
+      color: $royal-blue;
+      text-decoration: none;
+    }
+  }
+  .group-item {
+    @include clearfix;
+    margin-bottom: 1.25rem;
+  }
+  header a {
+    color: lighten($mid-gray, 10%);
+  }
+}
+
+.group-module--group {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  @media (min-width: $screen-sm) {
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
+}
+
+.group-module--artwork {
+  margin-bottom: 3.75rem;
+  @media (min-width: $screen-sm) {
+    .group-item {
+      width: 50%;
+      padding-right: 30px;
+    }
+  }
+}
+
+.group-item.current {
+  opacity: 0.75;
+}

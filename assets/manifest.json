@@ -1,0 +1,43 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": ["scripts/modaal.js", "scripts/main.js"],
+      "main": true
+    },
+    "admin.js": {
+      "files": ["scripts/admin.js"],
+      "main": true
+    },
+    "viewer.js": {
+      "bower": ["openseadragon"],
+      "files": [
+        "scripts/leiden-viewer/leidenviewer.js",
+        "scripts/leiden.viewer.js"
+      ],
+      "main": true
+    },
+    "collection.js": {
+      "bower": [
+        "isotope-layout",
+        "isotope-masonry-horizontal",
+        "jquery-hoverIntent",
+        "jquery.kinetic"
+      ],
+      "files": ["scripts/collection-grid.js"]
+    },
+    "main.css": {
+      "files": ["styles/main.scss"],
+      "main": true
+    },
+    "admin.css": {
+      "files": ["styles/admin.scss"],
+      "main": true
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    }
+  },
+  "config": {
+    "devUrl": "http://leiden-collection.local"
+  }
+}

@@ -1,0 +1,120 @@
+.entry-content .tooltipstered {
+  border-bottom: 1px dashed currentColor;
+  &:hover, &:focus {
+    text-decoration: none;
+    border-bottom-style: solid;
+  }
+}
+
+.tooltip {
+  cursor: help;
+}
+
+.tooltip--info {
+  color: $periwinkle;
+  border: none !important;
+}
+
+sup.tooltip--info {
+  top: -.3em;
+}
+
+// base styles
+.tooltipster-base {
+  .tooltipster-box {
+    border: none;
+    border-radius: 0;
+  }
+}
+
+// custom side tooltip
+.leiden-side-tip {
+  min-width: 180px;
+  overflow: hidden;
+  .tooltipster-box {
+    background-color: white;
+    border-top: 3px solid $purple;
+  }
+  .tooltipster-content {
+    padding: 1rem 0;
+  }
+}
+
+.tooltipster-update-rotate {
+  // stops jiggly ajax load animation
+  animation: none !important;
+}
+
+// default tooltips
+.tooltipster-base:not(.leiden-side-tip) {
+  .tooltipster-box {
+    background: $lighter-gray;
+  }
+  .tooltipster-content {
+    color: $purple;
+    padding: 1rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border,
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background {
+  border-top-color: $lighter-gray;
+}
+
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-border,
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background {
+  border-bottom-color: $lighter-gray;
+}
+
+.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border,
+.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background {
+  border-right-color: $lighter-gray;
+}
+
+.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-border,
+.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-background {
+  border-left-color: $lighter-gray;
+}
+
+.rich-tooltip__header {
+  @include clearfix;
+  @extend .serif;
+  margin-bottom: 1rem;
+  color: $purple;
+  .meta {
+    color: $storm-gray;
+    font-style: italic;
+    font-size: 1rem;
+  }
+  p {
+    line-height: 1.1;
+    margin-bottom: 0;
+  }
+}
+
+.rich-tooltip__image {
+  width: 60px;
+  min-height: 1px;
+  float: left;
+  margin-right: 1rem;
+}
+
+.rich-tooltip__title {
+  font-size: 1.25rem;
+  margin: 0 0 .5rem 0;
+}
+
+.rich-tooltip__content {
+  color: $purple;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.wpg-linkify {
+  white-space: nowrap;
+}

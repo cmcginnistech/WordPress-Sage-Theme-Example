@@ -1,0 +1,13 @@
+#wp-admin-bar-js-clear-location-cache {
+
+  &.disabled {
+    color: #888 !important;
+    pointer-events: none;
+  }
+  a.error {
+    color: red !important;
+  }
+  a.success {
+    color: limegreen !important;
+  }
+}

@@ -1,0 +1,101 @@
+.overlay {
+  @include overlay;
+  position: relative;
+  max-width: 100%; // for ie 11
+
+  .overlay-content--hide {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  .overlay-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    padding: 1rem 1rem 0 1rem;
+    width: 100%;
+    color: $white;
+    transition: all 0.3s ease-in-out 0s;
+    z-index: 10;
+  }
+  .plus-icon {
+    border: 2px solid rgba(255,255,255,0.5);
+    padding: 5px;
+    svg {
+      margin-top: -4px;
+    }
+  }
+  svg {
+    fill: white;
+  }
+}
+
+// Hover/focus states
+// (for some reason Edge has to have the separated out and not nested)
+.overlay:hover:after {
+  opacity: 1;
+}
+.overlay:hover .overlay-content {
+  opacity: 1;
+  bottom: 1rem;
+}
+.overlay:hover .overlay-content--hide {
+  opacity: 0;
+}
+.overlay:focus-within:after {
+  opacity: 1;
+}
+.overlay:focus-within .overlay-content {
+  opacity: 1;
+  bottom: 1rem;
+}
+.overlay:focus-within .overlay-content--hide {
+  opacity: 0;
+}
+a:focus .overlay:after {
+  opacity: 1;
+}
+a:focus .overlay .overlay-content {
+  opacity: 1;
+  bottom: 1rem;
+}
+a:focus .overlay .overlay-content--hide {
+  opacity: 0;
+}
+// end hover/focus states
+
+.overlay .artist-name {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: inherit;
+  text-transform: uppercase;
+}
+
+.overlay .artwork-title {
+  @extend .serif;
+  font-style: italic;
+  line-height: 1;
+}
+
+.overlay .overlay-content.overlay-content--center {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+// Mix blend effect using SVG filters
+$blend_colors: ('purple');
+@each $color in $blend_colors {
+  .bg-matrix-#{$color} {
+    filter: url("#duotone_#{$color}");
+  }
+}
+
+// Progressive enhancement for SVG filters which support em'
+@supports (filter: url()) and (mix-blend-mode: screen) {
+  .bg-cover-overlay[data-bg-matrix]::after {
+    background-color: transparent !important;
+  }
+}

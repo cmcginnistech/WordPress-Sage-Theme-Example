@@ -1,0 +1,43 @@
+{
+    "key": "group_5aecc2eb14d9f",
+    "title": "Theme Options: Bibliography",
+    "fields": [
+        {
+            "key": "field_5aecc2e468ddc",
+            "label": "Downloadable Bibliography File",
+            "name": "downloadable_bibliography_file",
+            "type": "file",
+            "instructions": "Appears in the form of a print button on the bibliography archive page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1525465906
+}

@@ -1,0 +1,107 @@
+.nav-tabs {
+  text-align: center;
+  border-color: $light-gray;
+  border-width: 2px;
+  font-family: $serif;
+
+  // for flex layout
+  display: flex;
+  justify-content: center;
+
+  & > li {
+    float: none;
+    border: none;
+
+    // for flex layout
+    display: flex;
+    margin-bottom: 0;
+
+    // old inline-block layout
+    // display: inline-block;
+    // margin: 0 -3px -2px -3px;
+  }
+  & > li > a {
+    border-radius: 0;
+    color: $purple;
+    font-size: 1.125rem;
+    background-color: $lighter-gray;
+    border-bottom: none !important;
+    padding: 12px 25px !important;
+
+    // for flex layout
+    margin-right: 3px;
+
+    // old inline-block layout
+    // border: 2px solid white;
+  }
+  & > li:last-child > a {
+    margin-right: 0;
+  }
+  & > li.active {
+    // for flex layout
+    margin-bottom: -2px;
+
+    // old inline-block layout
+    // margin-left: 0;
+    // margin-right: 0;
+  }
+  & > li.active > a,
+  & > li.active > a:focus {
+    border: 2px solid $light-gray !important;
+    border-bottom-color: white !important;
+  }
+}
+
+.nav-tabs > li > a:hover {
+  background-color: $light-gray;
+  border-color: white;
+}
+
+.nav-tabs > li.disabled {
+  pointer-events: none;
+  & > a {
+    background-color: lighten($lighter-gray, 2%);
+    color: lighten($mid-gray, 30%);
+
+  }
+}
+
+.entry-tab-container {
+  position: relative;
+  @media (min-width: $screen-sm) {
+    padding-top: 7rem;
+  }
+}
+
+.entry-tabnav {
+  background: white;
+  margin-bottom: 3rem;
+  z-index: 50;
+
+  &.affix {
+    position: fixed;
+    top: 0;
+  }
+  .admin-bar &.affix {
+    top: 32px;
+  }
+  @media (min-width: $screen-sm) {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+  }
+}
+
+.tab-pane--basic {
+  .tab-pane-content {
+    @include make-sm-column-offset(2);
+    @include make-sm-column(8);
+    margin-bottom: 3.75rem;
+
+    ul, ol {
+      padding-left: 1.375rem;
+    }
+  }
+}

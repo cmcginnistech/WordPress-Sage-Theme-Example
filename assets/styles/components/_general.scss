@@ -1,0 +1,82 @@
+.component {
+  margin-bottom: 4rem;
+  clear: left;
+}
+
+.single-artwork,
+.single-essay,
+.single-group,
+.single-artist,
+.page-template-template-portrait-in-oil {
+  .component--text {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.component--text + .component--text {
+  margin-top: -3rem;
+}
+
+.component--artwork-grouping + .component--artwork-grouping {
+  margin-top: calc(-3rem - 16px);
+}
+
+// this accomodates our left side tooltips as well as
+// our right hand comp-fig sidebar
+.component .entry-content {
+  @include make-sm-column(9);
+  @include make-md-column-offset(1);
+  @include make-md-column(8);
+  @include make-lg-column-offset(2);
+  @include make-lg-column(7);
+
+  // pages that don't have the right sidebar but use components
+  .no-comp-figs & {
+    @include make-sm-column(10);
+    @include make-md-column(9);
+    @include make-lg-column(8);
+  }
+}
+
+.single-staff_member,
+.single-entry_author,
+.single-press {
+  .components-wrapper {
+    position: relative;
+    padding-top: 50px;
+    margin-top: 8px;
+    &:before {
+      content: "";
+      width: calc(100% - 30px);
+      position: absolute;
+      top: 0;
+      border-top: 2px solid $lighter-gray;
+    }
+  }
+}
+
+.component .component-title {
+  margin-bottom: 1.5rem;
+  font-size: $size-root * 2;
+}
+
+.component--text {
+  .entry-related-essays,
+  .entry-attribution {
+    display: none;
+    margin-top: 3rem;
+  }
+
+  .single-artwork &:last-child,
+  .single-essay &:last-child,
+  .single-group &:last-child,
+  .single-artist &:last-child,
+  .page-template-template-portrait-in-oil &:last-child {
+    .entry-attribution,
+    .entry-related-essays {
+      display: block;
+    }
+  }
+}

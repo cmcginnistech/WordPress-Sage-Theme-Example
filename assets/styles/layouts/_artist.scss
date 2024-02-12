@@ -1,0 +1,67 @@
+.single-artist-header {
+  background-color: $lighter-gray;
+  padding: 2.5rem 0;
+
+  @media (min-width: $screen-sm) {
+    padding: 5rem 0;
+    margin-bottom: 4rem;
+  }
+  .btn--how-to-cite {
+    border: 2px solid $light-gray;
+  }
+  .btn--work-in-collection:after {
+    right: 1rem;
+  }
+}
+
+.single-artist-header__feat-img {
+  @media (min-width: $screen-sm) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.works-in-collection {
+  margin-top: 3rem;
+  strong {
+    color: $purple;
+    font-size: $size-root-xs;
+  }
+}
+
+.wic-inline-grid {
+  @extend .list-unstyled;
+  @extend .list-inline;
+  font-size: 0; // inline block spacing fix
+
+  img {
+    height: 90px;
+    width: auto;
+  }
+  & > li {
+    margin-bottom: 10px;
+  }
+  .view-all {
+    height: 90px;
+    vertical-align: top;
+    a {
+      @extend .serif;
+      display: flex;
+      align-items: center;
+      background-color: $purple;
+      font-size: $size-root-xs;
+      font-style: italic;
+      height: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+      color: $light-gray;
+    }
+  }
+}
+
+.artist-entry-heading {
+  color: $purple;
+  font-size: $size-h2;
+  margin-bottom: 1rem;
+}

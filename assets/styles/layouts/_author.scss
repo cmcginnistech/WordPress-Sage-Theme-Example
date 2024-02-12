@@ -1,0 +1,113 @@
+.single-author-content {
+  .row {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    @media (min-width: $screen-sm) {
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+.single-entry_author {
+
+  h2,
+  h3 {
+    margin-top: 0px;
+    line-height: 1;
+  }
+  h2 {
+    color: $purple;
+  }
+
+  .btn-collapse {
+    margin-bottom: 20px;
+  }
+
+  .author-single-header {
+    color: $periwinkle;
+    h1 {
+      color: white;
+      margin-top: 5px;
+    }
+    span {
+      text-transform: uppercase;
+      font-size: 0.9em;
+      font-weight: bold;
+    }
+    @media (min-width: $screen-sm) {
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 3rem;
+      .author-single-header-right-column {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-left: 2px solid $royal-blue;
+      }
+    }
+  }
+
+  .author-intro-container {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    @media (min-width: $screen-sm) {
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .author-single-right-column {
+    @media (min-width: $screen-sm) {
+      border-left: 2px solid $light-gray;
+    }
+    h3 {
+      color: $royal-blue;
+      font-size: $size-root-xs;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    h3:not(:first-child) {
+      margin-top: 3.5em;
+    }
+    &.artwork-entries {
+      a {
+        font-size: 1.1em;
+      }
+    }
+    ul {
+      list-style: none;
+      padding-left: 0px;
+      li {
+        margin-bottom: 20px;
+        a {
+          color: $purple;
+        }
+      }
+    }
+  }
+
+  .artist-biographies-container {
+    @media (min-width: $screen-sm) {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          flex-basis: 50%;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+.single-author-content {
+  @media (min-width: $screen-sm) {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: $screen-sm - 1) {
+  .single-entry_author .components-wrapper:before {
+    display: none;
+  }
+}

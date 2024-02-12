@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Leiden Viewer Test</title>
+    <style>
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin: 0;
+      }
+
+      .nav {
+        display: flex;
+        height: 30px;
+        border-bottom: 1px solid #888;
+      }
+
+      .nav .button {
+        margin: 5px 0 0 10px;
+        cursor: pointer;
+      }
+
+      .nav .info {
+        margin: 5px 0 0 10px;
+        color: #888;
+      }
+
+      .viewer-container {
+        flex-basis: 1px;
+        flex-grow: 1;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="zoom-in button">Zoom In</div>
+      <div class="zoom-out button">Zoom Out</div>
+      <label class="button"><input type="checkbox" class="v-checkbox" checked>V</label>
+      <label class="button"><input type="checkbox" class="xr-checkbox">XR</label>
+      <label class="button"><input type="checkbox" class="ir-checkbox">IR</label>
+      <label class="button"><input type="radio" class="curtain-radio" name="mode" checked>Curtain</label>
+      <label class="button"><input type="radio" class="sync-radio" name="mode">Sync</label>
+      <div class="info">Zoom: <span class="zoom-level"></span></div>
+      <div class="info">Pan: <span class="pan-point"></span></div>
+    </div>
+    <div class="viewer-container"></div>
+    <script src="../openseadragon/openseadragon.min.js"></script>
+    <script src="leidenviewer.js"></script>
+    <script>
+
+      var leiden623 = {
+        Image: {
+          xmlns: 'http://schemas.microsoft.com/deepzoom/2008',
+          Url: 'https://www.theleidencollection.com/LeidenCollectionSamples/images/GD-108_vis_reg_files/',
+          Format: 'jpg',
+          Overlap: '1',
+          TileSize: '128',
+          Size: {
+            Width:  '5183',
+            Height: '6539'
+          }
+        }
+      };
+
+      var leiden623XR = {
+        Image: {
+          xmlns: 'http://schemas.microsoft.com/deepzoom/2008',
+          Url: 'https://www.theleidencollection.com/LeidenCollectionSamples/images/GD-108_xray_reg_files/',
+          Format: 'jpg',
+          Overlap: '1',
+          TileSize: '128',
+          Size: {
+            Width:  '5183',
+            Height: '6539'
+          }
+        }
+      };
+
+      var leiden623IR = {
+        Image: {
+          xmlns: 'http://schemas.microsoft.com/deepzoom/2008',
+          Url: 'https://www.theleidencollection.com/LeidenCollectionSamples/images/GD-108_ir_reg_files/',
+          Format: 'jpg',
+          Overlap: '1',
+          TileSize: '128',
+          Size: {
+            Width:  '5183',
+            Height: '6539'
+          }
+        }
+      };
+
+      var duomo = {
+        Image: {
+          xmlns: 'http://schemas.microsoft.com/deepzoom/2008',
+          Url: 'http://openseadragon.github.io/example-images/duomo/duomo_files/',
+          Format: 'jpg',
+          Overlap: '2',
+          TileSize: '256',
+          Size: {
+            Width:  '13920',
+            Height: '10200'
+          }
+        }
+      };
+
+      var zoomLevelEl = document.querySelector('.zoom-level');
+      var panPointEl = document.querySelector('.pan-point');
+      var vCheckbox = document.querySelector('.v-checkbox');
+      var xrCheckbox = document.querySelector('.xr-checkbox');
+      var irCheckbox = document.querySelector('.ir-checkbox');
+      var curtainRadio = document.querySelector('.curtain-radio');
+      var syncRadio = document.querySelector('.sync-radio');
+
+      var viewer = new LeidenViewer({
+        container: document.querySelector('.viewer-container'),
+        viewportEventThrottle: 250,
+        images: [
+          {
+            key: 'v',
+            tileSource: leiden623,
+            shown: true
+          },
+          {
+            key: 'xr',
+            tileSource: leiden623XR
+          },
+          {
+            key: 'ir',
+            tileSource: leiden623IR
+          }
+        ]
+      });
+
+      function ensureOneShown() {
+        if (!vCheckbox.checked && !xrCheckbox.checked && !irCheckbox.checked) {
+          vCheckbox.checked = true;
+          viewer.setImageShown('v', true);
+        }
+      }
+
+      viewer.addHandler('change:viewport', function() {
+        zoomLevelEl.innerHTML = viewer.getZoom();
+        panPointEl.innerHTML = viewer.getPan().toString();
+      });
+
+      viewer.addHandler('open-failed', function(event) {
+        console.error('open failed', event);
+      });
+
+      document.querySelector('.zoom-in').addEventListener('click', function() {
+        viewer.zoomIn();
+      });
+
+      document.querySelector('.zoom-out').addEventListener('click', function() {
+        viewer.zoomOut();
+      });
+
+      vCheckbox.addEventListener('click', function() {
+        viewer.setImageShown('v', vCheckbox.checked);
+        ensureOneShown();
+      });
+
+      xrCheckbox.addEventListener('click', function() {
+        viewer.setImageShown('xr', xrCheckbox.checked);
+        ensureOneShown();
+      });
+
+      irCheckbox.addEventListener('click', function() {
+        viewer.setImageShown('ir', irCheckbox.checked);
+        ensureOneShown();
+      });
+
+      curtainRadio.addEventListener('click', function() {
+        viewer.setMode('curtain');
+      });
+
+      syncRadio.addEventListener('click', function() {
+        viewer.setMode('sync');
+
+        // select all 3 images if only 1 selected
+        var imageCount = 0;
+        imageCount += vCheckbox.checked ? 1 : 0;
+        imageCount += xrCheckbox.checked ? 1 : 0;
+        imageCount += irCheckbox.checked ? 1 : 0;
+
+        if (imageCount === 1) {
+          vCheckbox.checked = true;
+          xrCheckbox.checked = true;
+          irCheckbox.checked = true;
+          viewer.setImageShown('v', true);
+          viewer.setImageShown('xr', true);
+          viewer.setImageShown('ir', true);
+        }
+      });
+
+      var setStartValues = false; // Change to true for testing
+      if (setStartValues) {
+        viewer.setMode('sync');
+        viewer.setZoom(2);
+        viewer.setPan(new OpenSeadragon.Point(0, 0));
+        viewer.setImageShown('xr', true);
+        viewer.setImageShown('ir', true);
+        viewer.setImageShown('v', false);
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+{
+  "name": "sage",
+  "homepage": "https://roots.io/sage/",
+  "authors": [
+    "Ben Word <ben@benword.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "3.4.1",
+    "bootstrap-tabcollapse": "0.2.7",
+    "jquery": "2.2.4",
+    "tachyons-sass": "4.8.1",
+    "isotope-layout": "3.0.6",
+    "isotope-masonry-horizontal": "2.0.1",
+    "bootstrap-select": "1.12.4",
+    "masonry-layout": "4.2.1",
+    "openseadragon": "2.3.1",
+    "lazysizes": "4.0.2",
+    "picturefill": "3.0.3",
+    "modaal": "0.3.1",
+    "tooltipster": "4.2.6",
+    "verge": "1.10.2",
+    "clipboard": "^1.7.1",
+    "jquery.kinetic": "2.1.0",
+    "jquery-hoverIntent": "~1.9.0",
+    "tiny-slider": "^2.9.2"
+  },
+  "overrides": {
+    "bootstrap-sass": {
+      "main": [
+        "./assets/javascripts/bootstrap/transition.js",
+        "./assets/javascripts/bootstrap/collapse.js",
+        "./assets/javascripts/bootstrap/dropdown.js",
+        "./assets/javascripts/bootstrap/carousel.js",
+        "./assets/javascripts/bootstrap/modal.js",
+        "./assets/javascripts/bootstrap/tab.js",
+        "./assets/javascripts/bootstrap/button.js",
+        "./assets/javascripts/bootstrap/affix.js"
+      ]
+    },
+    "bootstrap-select": {
+      "main": [
+        "dist/js/bootstrap-select.js"
+      ]
+    },
+    "lazysizes": {
+      "main": [
+        "lazysizes.js",
+        "plugins/bgset/ls.bgset.js"
+      ]
+    },
+    "masonry-layout": {
+      "main": [
+        "./dist/masonry.pkgd.js"
+      ]
+    },
+    "modaal": {
+      "main": [
+        "./dist/css/modaal.scss"
+      ]
+    },
+    "outlayer": {
+      "main": [
+        "item.js",
+        "outlayer.js"
+      ]
+    },
+    "isotope-layout": {
+      "main": [
+        "./dist/isotope.pkgd.js"
+      ]
+    },
+    "isotope-masonry-horizontal": {
+      "main": [
+        "masonry-horizontal.js"
+      ]
+    },
+    "jquery.kinetic": {
+      "main": [
+        "jquery.kinetic.js"
+      ]
+    },
+    "jquery-hoverIntent": {
+      "main": [
+        "jquery.hoverIntent.js"
+      ]
+    }
+  }
+}

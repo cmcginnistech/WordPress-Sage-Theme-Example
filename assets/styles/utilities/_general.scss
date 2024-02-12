@@ -1,0 +1,59 @@
+@media (max-width: $screen-xs-max) {
+  .sr-only-xs {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+}
+
+.visible-xs-flex {
+  display: none;
+  @media (max-width: $screen-xs-max) {
+    display: flex !important;
+  }
+}
+
+.hr--2px {
+  border-top: 2px solid $lighter-gray;
+}
+
+.object-label {
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $royal-blue;
+}
+
+.header-accent {
+  display: inline-block;
+  &:after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: $periwinkle;
+    margin-top: .5rem;
+    display: block;
+  }
+}
+
+// Be nice to screen readers.
+// @see https://codepen.io/thierry/pen/gvYPbN
+.a11y-link-wrap a,
+.a11y-link-wrap button {
+  outline: 0;
+
+  // A pseudo-element is used to make an entire group "clickable" which allows to create proper/better link text.
+  &:before, &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+  }
+}

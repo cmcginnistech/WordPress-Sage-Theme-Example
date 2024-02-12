@@ -1,0 +1,218 @@
+.site-footer {
+  padding: 4rem 0 1rem 0;
+  background-color: $purple;
+  color: $white;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+
+  .footer-logo {
+    max-width: 220px;
+  }
+
+  .dropdown-toggle {
+    color: $white;
+    pointer-events: none;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    @include antialiased();
+
+    &:focus {
+      background-color: transparent;
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  // Hide home menu item in footer.
+  .menu-home {
+    display: none;
+  }
+
+  .nav {
+    @include make-xs-column(12);
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    @media (min-width: $screen-md) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .nav > .dropdown {
+    margin-bottom: 1rem;
+    flex-basis: 100%;
+    padding: 20px;
+    @media (min-width: $screen-sm) {
+      padding: 10px;
+      flex-basis: 25%;
+    }
+  }
+
+  .dropdown-toggle .caret {
+    display: none;
+  }
+
+  .dropdown-menu {
+    display: block;
+    background: none;
+    position: relative;
+    box-shadow: none;
+    border: none;
+    width: 100%;
+    top: auto;
+
+    a {
+      @extend .serif;
+      color: $periwinkle;
+      padding: 0;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      white-space: normal;
+      line-height: 1.1;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+    .menu-subtitle {
+      font-size: 0.7em;
+      margin: -12px 0 20px;
+      display: block;
+      color: $periwinkle;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+    .dropdown-header {
+      margin: 16px 0 8px;
+      text-transform: uppercase;
+      padding-left: 0;
+      color: $light-gray;
+      font-weight: 100;
+      font-size: 0.7rem;
+      white-space: normal;
+      line-height: 1;
+      &:first-child {
+        margin-top: 0px;
+      }
+      a {
+        @extend .sans-serif;
+        color: $light-gray;
+        margin-bottom: 0px;
+        font-size: 0.7rem;
+        line-height: 1;
+        font-weight: 100;
+      }
+    }
+  }
+  .gform_wrapper {
+    label {
+      display: none;
+      font-size: 0.7rem;
+    }
+    h3 {
+      margin-top: 0px;
+      color: white;
+    }
+  }
+  .gf_simple_horizontal {
+    input[type="submit"] {
+      color: white;
+      border-color: white;
+      background-color: transparent;
+    }
+    input[type="text"],
+    input[type="email"] {
+      color: white;
+      border: none;
+      background-color: transparent;
+      border-bottom: 2px solid $periwinkle;
+      padding: 0 0 6px 0;
+      font-size: 0.8rem;
+      font-family: $serif;
+      &::placeholder {
+        color: $light-storm-gray;
+      }
+      &:focus {
+        background-color: transparent;
+      }
+    }
+  }
+  @media (min-width: $screen-sm) {
+    .gf_simple_horizontal {
+      display: flex;
+      flex-wrap: wrap;
+      .gform_body .gform_fields {
+        display: flex;
+        .name_first,
+        .name_last,
+        .ginput_container_email {
+          margin-right: 25px;
+        }
+      }
+      .gform_heading {
+        min-width: 100%;
+      }
+    }
+  }
+}
+
+.contact_form {
+  .gform_fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    > li {
+      min-width: calc(50% - 15px);
+    }
+    #field_3_8 {
+      width: 100%;
+    }
+  }
+}
+
+.gf_simple_horizontal {
+  .hidden_label {
+    .gfield_label {
+      display: none;
+    }
+  }
+  input[type="text"],
+  input[type="email"] {
+    &::placeholder {
+      color: transparent;
+    }
+  }
+  .ginput_complex {
+    display: flex;
+    span {
+      flex-grow: 1;
+      &:first-child {
+        margin-right: 30px;
+      }
+    }
+    label {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .site-footer .footer-logo {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: $grid-float-breakpoint) {
+  .site-footer .dropdown-menu a {
+    font-size: 1rem;
+  }
+}

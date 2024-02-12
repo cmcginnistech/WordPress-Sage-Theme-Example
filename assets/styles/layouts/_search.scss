@@ -1,0 +1,157 @@
+.search-results {
+  .page-title {
+    @extend .sans-serif;
+    font-size: $size-root-xs;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .page-header div[class^="c"] {
+    width: 100%;
+  }
+  .page-title {
+    margin-bottom: 0;
+  }
+  .page-title span {
+    @extend .serif;
+    position: relative;
+    font-size: $size-h1-plus;
+    font-weight: normal;
+    quotes: "“" "”" "‘" "’";
+    text-transform: none;
+
+    &:before, &:after {
+      color: $light-gray;
+      position: absolute;
+      top: .4375rem;
+    }
+    &:before {
+      content: open-quote;
+      left: -1rem;
+    }
+    &:after {
+      content: close-quote;
+      right: -1rem;
+    }
+  }
+}
+
+.result-count {
+  margin: 1.5rem 0 2rem 0;
+  color: $purple;
+
+  span {
+    color: $royal-blue;
+    font-weight: bold;
+  }
+  @media (min-width: $screen-sm) {
+    font-size: 1.25rem;
+    margin: 2.5rem 0 3rem 0;
+  }
+}
+
+.search-item {
+  @include make-row();
+  padding: 1rem 0;
+}
+
+.search-item__content,
+.search-item__excerpt,
+.search-item__image {
+  @include make-sm-column(4);
+}
+
+.search-item__excerpt {
+  line-height: 1.6;
+
+  a {
+    text-decoration: underline;
+  }
+  @media (min-width: $screen-sm) {
+    line-height: 1.75;
+  }
+}
+
+.search-item__content {
+  .tombstone dd {
+    margin-bottom: .125rem
+  }
+  .artist-name {
+    margin-bottom: .5rem;
+    p {
+      margin-bottom: 0;
+      line-height: 1.2;
+    }
+  }
+  .currently-on-view {
+    margin-top: .5rem;
+  }
+}
+
+.search-item__title {
+  font-size: 2rem;
+  margin-bottom: 0;
+
+  a {
+    color: $purple;
+  }
+  @media (min-width: $screen-sm) {
+    margin-top: 0;
+  }
+}
+
+.search-item__meta {
+  color: $storm-gray;
+}
+
+.search-item--video {
+  .search-item__content {
+    @include make-sm-column(8);
+    line-height: 1.6;
+  }
+  .search-item__excerpt {
+    display: none;
+  }
+  .search-item__title {
+    margin-bottom: 1rem;
+  }
+  strong {
+    color: $purple;
+  }
+}
+
+.search-item--artist {
+  &:not(.search-item--has-thumb) .search-item__excerpt {
+    @include make-sm-column(8);
+  }
+}
+
+.search-item--artwork {
+  .tombstone {
+    font-size: 0.9rem;
+  }
+  .search-item__title {
+    font-style: italic;
+  }
+}
+
+.search-item--group {
+  .search-item__title {
+    font-style: italic;
+  }
+}
+
+.search-pg-mobile-tab-select {
+  label {
+    width: 100%;
+  }
+  .bootstrap-select > .dropdown-toggle,
+  .bootstrap-select > .dropdown-toggle:hover,
+  .bootstrap-select > .dropdown-toggle:focus {
+    color: $purple;
+    font-weight: 500;
+    border-color: $light-periwinkle;
+  }
+  .bootstrap-select.btn-group .dropdown-toggle .bs-caret:after {
+    content: url("../images/icon/caret-down.svg");
+  }
+}

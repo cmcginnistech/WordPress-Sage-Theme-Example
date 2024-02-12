@@ -1,0 +1,97 @@
+.modal-content {
+  border-radius: 0;
+}
+
+.modal-header{
+  padding: 1rem 60px 0 1.5rem;
+  border: 0;
+  min-height: 45px;
+  @media (min-width: $screen-sm) {
+    padding-left: 2rem;
+  }
+}
+
+.modal-description {
+  margin-bottom: 1.5rem;
+}
+
+.modal-body {
+  padding: 1.5rem;
+  @media (min-width: $screen-sm) {
+    padding: 2rem;
+    padding-top: .5rem;
+  }
+}
+
+// Modaal
+.modaal-container {
+  max-width: 625px;
+}
+
+.modaal-content-container {
+  padding-top: 55px;
+
+  @media (min-width: $screen-sm) {
+    padding: 55px 3rem 1.5rem 3rem;
+  }
+}
+
+.modaal-content {
+  img {
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    margin: 1rem 5px 0;
+  }
+}
+
+.modaal-image img {
+  margin-bottom: 0;
+}
+
+.modaal-image .modaal-container {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.modaal-close {
+  border-radius: 0;
+}
+
+.modal-content .close {
+  @extend .modaal-close;
+  margin-top: 0;
+}
+
+.modaal-inline .modaal-close,
+.modal-content .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  &:before, &:after {
+    background: $royal-blue;
+    width: 2px;
+  }
+  &:hover, &:focus {
+    opacity: 1;
+    &:before, &:after {
+      background: $purple;
+    }
+  }
+}
+
+.modaal-overlay {
+  z-index: 1999; // make sure it overlays bootstrap's modal zindex of 1040
+}
+
+.modaal-gallery-label {
+  display: block;
+}
+
+.single-group .modal-lg {
+  @media (min-width: $screen-lg) {
+    width: 1100px;
+  }
+}

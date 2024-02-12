@@ -1,0 +1,122 @@
+.entry-header {
+  padding-top: 3.25rem;
+  margin-bottom: 3.75rem;
+  @media (min-width: $screen-sm) {
+    & > div {
+      display: flex;
+    }
+  }
+}
+
+.entry-header__main {
+  @include make-sm-column(7);
+}
+
+.entry-header__sidebar {
+  @include make-sm-column(5);
+  @media (min-width: $screen-sm) {
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -15px;
+      width: 2px;
+      height: 100%;
+      background: $lighter-gray;
+    }
+  }
+}
+
+.entry-header__title {
+  font-size: $size-h1;
+  margin: -0.5rem 0 0.5rem 0;
+  color: $purple;
+
+  .single-artwork &,
+  .single-group & {
+    font-style: italic;
+  }
+  @media (min-width: $screen-sm) {
+    max-width: 90%;
+  }
+}
+
+.entry-attribution {
+  margin-top: 1rem;
+}
+
+.entry-attribution__author {
+  @include make-sm-column(9);
+  @include make-md-column-offset(1);
+  @include make-md-column(8);
+  @include make-lg-column-offset(2);
+  @include make-lg-column(7);
+}
+
+.entry-footer {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  @media (max-width: $screen-sm - 1) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.entry-footer__section {
+  border-top: 2px solid $lighter-gray;
+  padding: 1.5rem 0;
+}
+
+.entry-footer__section-header {
+  @extend .serif;
+  @include make-sm-column(2);
+  font-size: 1.65rem;
+  color: $purple;
+  line-height: 1;
+
+  @media (min-width: $screen-sm) {
+    font-size: 2rem;
+  }
+}
+
+.entry-footer__section-content {
+  @include make-sm-column(9);
+}
+
+.entry-footer__section-header--lg {
+  @include make-sm-column(3);
+  & + .entry-footer__section-content {
+    @include make-sm-column(8);
+  }
+}
+
+.entry-footer__section .row {
+  position: relative;
+}
+
+.entry-footer__icon-wrapper {
+  position: absolute;
+  top: -8px;
+  right: 15px;
+  z-index: 5;
+  text-align: right;
+
+  @media (max-width: $screen-sm - 1) {
+    width: 100%;
+    .btn {
+      text-align: right;
+      width: 100%;
+    }
+    svg {
+      width: 30px;
+    }
+  }
+}
+
+.iconclass-term-list {
+  @extend .list-unstyled;
+  column-count: 3;
+  li {
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,90 @@
+.post-utility-buttons {
+  @extend .clearfix;
+  margin-bottom: 2px;
+
+  .btn {
+    line-height: 1;
+  }
+  .btn svg {
+    margin-top: -3px;
+    margin-left: 5px;
+  }
+  .dropdown-menu > li > a,
+  .dropdown-menu > li > button {
+    color: $mid-gray;
+    padding-left: 14px;
+    &:hover, &:focus {
+      color: $purple;
+      background-color: $lighter-gray;
+    }
+  }
+  .dropdown-menu > li > button {
+    border: none;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 100%;
+    text-align: left;
+  }
+  .icon {
+    margin-right: 4px;
+  }
+  @media (min-width: $screen-sm) {
+    margin-bottom: 2rem;
+  }
+}
+
+.share-post-module,
+.download-post-module,
+.print-post-module {
+  position: relative;
+  width: 50%;
+  float: left;
+
+  @media (min-width: $screen-sm) {
+    width: auto;
+    float: none;
+    display: inline-block;
+  }
+  @media (max-width: $screen-sm - 1) {
+    margin: 0;
+
+    .btn-outline {
+      width: 100%;
+      display: block;
+      text-align: center;
+      padding: 15px;
+      height: 48px;
+      border: none;
+      background-color: $lighter-gray;
+      &:hover, &:focus, &:active {
+        background-color: $light-gray;
+      }
+    }
+    body.single-artist & .btn-outline,
+    body.single-video & .btn-outline {
+      border: 2px solid $light-gray;
+    }
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .post-utility-buttons > div {
+    margin-bottom: .8rem;
+  }
+}
+
+@media (min-width: $screen-md) {
+  .post-utility-buttons > div {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: $screen-sm - 1) {
+  .share-post-module {
+    border-right: 2px solid transparent;
+  }
+  .single-artwork .print-post-module,
+  .single-group .print-post-module {
+    display: none;
+  }
+}

@@ -1,0 +1,519 @@
+$navbar-height--mobile: #{$navbar-height}; //adjust for filter button
+
+.collection-stage {
+  padding-top: 20px;
+  padding-left: 10px;
+  height: calc(100% - 20px);
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  .page-template-template-collection-gallery & {
+    background-color: $mid-gray;
+    padding: 0;
+    background-image: url("../images/gallery-backdrop.png");
+    background-position: bottom center;
+    background-size: cover;
+    height: 100%;
+  }
+  .loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    z-index: 10;
+    transition: opacity 500ms ease;
+  }
+  &.loaded .loader {
+    opacity: 0;
+    pointer-events: none;
+  }
+  #js-posts-row {
+    padding-right: 200px;
+  }
+  .page-template-template-collection-gallery & #js-posts-row {
+    margin-top: -20px;
+  }
+  #js-posts-load-more {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    width: 50px;
+  }
+  @media (min-width: $screen-sm) {
+    #js-posts-row {
+      margin-top: 0 !important;
+    }
+    .page-template-template-collection-gallery & {
+      background-position: 50% 60%;
+    }
+  }
+}
+
+.page-template-template-collection,
+.page-template-template-collection-gallery {
+  & {
+    min-height: 0;
+  }
+  .wrap {
+    max-width: none;
+    padding: 0;
+  }
+  .main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: calc(100vh - #{$navbar-height--mobile});
+    padding: 0;
+    margin-top: $navbar-height;
+  }
+  &.admin-bar .main {
+    height: calc(100vh - (#{$navbar-height--mobile} + #{$admin-bar-height}));
+  }
+  @media (min-width: $screen-sm) {
+    .main {
+      height: calc(100vh - #{$navbar-height});
+    }
+    &.admin-bar .main {
+      height: calc(100vh - (#{$navbar-height} + #{$admin-bar-height}));
+    }
+  }
+}
+
+.collection-grid {
+  height: 100%;
+
+  .grid-sizer,
+  .item {
+    height: calc(50% - 20px);
+    margin: 0 10px;
+  }
+
+  .item:not(.loaded) {
+    background-color: $gray-lighter;
+  }
+
+  .item img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.collection-grid-item {
+  height: 100%;
+  display: block;
+  position: relative;
+  img {
+    pointer-events: none; //prevent images from dragging
+  }
+}
+
+.collection-grid__location {
+  display: none;
+  @media (min-width: $screen-md) {
+    display: block;
+  }
+}
+
+.collection-gallery {
+  height: 100%;
+
+  .grid-sizer,
+  .item {
+    height: 100%;
+    margin: 0 30px;
+  }
+
+  .item:not(.loaded) .item-img-wrap {
+    background-color: #605e5f;
+  }
+
+  .item.loaded > .item-img-wrap {
+    height: auto !important;
+  }
+}
+
+.main .collection-gallery,
+.main .collection-grid {
+  // opacity: 0;
+  // transition: opacity 300ms ease;
+
+  @media (max-width: $screen-sm - 1) {
+    height: calc(100% - 53px); //filters button
+  }
+}
+
+.collection-grid-filters {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 -2px 16px 0 rgba(28, 29, 33, 0.25);
+  transition: opacity 300ms ease;
+  order: 2;
+  z-index: 5;
+
+  @media (min-width: $screen-sm) {
+    position: relative;
+  }
+  @media (max-width: $screen-sm - 1) {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.collection-header {
+  background-color: $purple;
+}
+
+.filter-group {
+  float: left;
+  padding: 14px 16px;
+
+  label {
+    display: block;
+  }
+  label small {
+    font-size: 10px;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+  }
+  .btn-group {
+    width: 100% !important;
+  }
+  .bootstrap-select .dropdown-toggle {
+    font-weight: 500;
+  }
+  @media (min-width: $screen-sm) {
+    label {
+      margin: 0;
+    }
+  }
+}
+
+.filter-group--sorting {
+  background-color: $purple;
+  width: 100%;
+
+  label {
+    color: white;
+  }
+  .collection-grid-filters & {
+    display: none;
+  }
+  @media (min-width: $screen-md) {
+    .collection-header & {
+      display: none;
+    }
+    .collection-grid-filters & {
+      display: block;
+      width: 33.333%;
+    }
+  }
+}
+
+.filter-group--filtering {
+  background-color: $lighter-gray;
+  width: 100%;
+
+  label {
+    margin-bottom: 15px;
+  }
+  .bootstrap-select > .dropdown-toggle {
+    border-bottom-color: $light-gray;
+    &.btn-default {
+      color: $purple;
+    }
+  }
+  .bootstrap-select.open > .dropdown-toggle,
+  .bootstrap-select .dropdown-toggle:focus {
+    border-bottom-color: $mid-gray;
+  }
+  .bootstrap-select.btn-group .dropdown-toggle .bs-caret:after {
+    content: url("../images/icon/caret-down.svg");
+  }
+  @media (min-width: $screen-md) {
+    .collection-grid-filters & {
+      width: 66.666%;
+    }
+  }
+  @media (min-width: $screen-sm) {
+    .collection-grid-filters & .filter {
+      width: 20%;
+      float: left;
+      padding: 0 15px;
+    }
+    label {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.foreground {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  bottom: 50px;
+  padding: 0 20px;
+
+  @media (min-width: $screen-sm) {
+    bottom: 74px;
+  }
+}
+
+.foreground-inner {
+  position: relative;
+  display: inline-block;
+
+  #bench {
+    height: 10.5vh;
+  }
+  #figure {
+    height: 66.8vh;
+    position: absolute;
+    bottom: 0;
+    left: -22vh;
+  }
+  @media (min-width: $screen-sm) {
+    #bench {
+      height: 14.5vh;
+    }
+  }
+}
+
+.item-inner {
+  display: inline;
+}
+
+.popover {
+  min-width: 300px;
+  border-radius: 0;
+}
+
+.popup-trigger {
+  float: right;
+  margin-top: 5px;
+  padding: 0;
+  color: $purple;
+
+  .item-img-wrap:hover + & {
+    opacity: 1;
+  }
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+  @media (min-width: $screen-sm) {
+    opacity: 0;
+  }
+}
+
+.tooltipster-content {
+  .tombstone {
+    margin-bottom: 1rem;
+  }
+  .tombstone dd,
+  .tombstone .currently-on-view {
+    margin: 0;
+  }
+  .page-template-template-collection & {
+    .currently-on-view {
+      display: none;
+    }
+  }
+  @media (min-width: $screen-lg) and (min-height: 940px) {
+    .currently-on-view {
+      display: block;
+    }
+  }
+}
+
+.page-template-template-collection .tooltipster-content,
+.page-template-template-collection-gallery .tooltipster-content {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.collection-grid-item__overlay {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  background-color: transparentize($purple, 0.15);
+  height: 100%;
+  padding: 1rem;
+  width: 100%;
+  color: white;
+  font-size: 0.8rem;
+  transition: opacity 300ms ease 100ms;
+  pointer-events: none;
+
+  .tombstone {
+    display: none;
+    font-size: 12px;
+    color: white;
+    margin-bottom: 1rem;
+    .currently-on-view {
+      margin-top: 0;
+    }
+  }
+  dl {
+    margin-bottom: 0.25rem;
+  }
+  @media (min-width: $screen-lg) and (min-height: 940px) {
+    .tombstone {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .collection-grid-item.hover .collection-grid-item__overlay {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .collection-grid-item:focus .collection-grid-item__overlay {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.collection-grid-item__title {
+  @extend .serif;
+  display: block;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.collection-view-select {
+  .icon {
+    width: 30px;
+    float: left;
+    padding-top: 8px;
+  }
+  .icon + .bootstrap-select {
+    width: calc(100% - 30px) !important;
+    float: left;
+  }
+}
+
+.collection-filters-toggle {
+  background-color: $lighter-gray;
+  display: block;
+  color: $purple;
+  padding: 14px 22px;
+  font-size: 1.25rem;
+  font-weight: bold;
+
+  svg {
+    float: right;
+  }
+  &.btn-collapse > div {
+    width: 100%;
+  }
+}
+
+// found an issue where the backdrop added by bootstrap
+// and bootstrap collapse prevents closing menus on windows and
+// touch devices.
+.page-template-template-collection,
+.page-template-template-collection-gallery {
+  .dropdown-backdrop {
+    z-index: -1;
+  }
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  // CSS specific to iOS Safari
+  body.page-template-template-collection,
+  body.page-template-template-collection-gallery {
+    display: block;
+    min-height: auto;
+  }
+  .page-template-template-collection .main,
+  .page-template-template-collection-gallery .main {
+    height: calc(100vh - 66px - 76px); // allowance for bottom browser bar
+  }
+}
+
+.item.no-results {
+  background: none !important;
+  padding: 0;
+  .alert {
+    width: 100%;
+  }
+  .page-template-template-collection & {
+    display: flex;
+    align-items: flex-end;
+  }
+  .page-template-template-collection-gallery & {
+    display: flex;
+    align-items: center;
+  }
+}
+
+#collection-nav {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  width: 100%;
+  padding: 0 15px;
+
+  .nav {
+    pointer-events: all;
+    cursor: pointer;
+    width: 32px;
+    max-width: 50px;
+    transition: opacity 200ms ease;
+    svg {
+      width: 100%;
+      height: auto;
+    }
+    &:hover svg circle {
+      opacity: 0.8;
+    }
+    @media (min-width: $screen-sm) {
+      width: 6.3vh; // based on screen height like artwork
+    }
+  }
+  .nav-left {
+    float: left;
+    opacity: 0;
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+  .scrolled + & .nav-left {
+    opacity: 1;
+  }
+  .nav-right {
+    float: right;
+  }
+  @media (min-width: $screen-md) {
+    padding: 0 20px;
+  }
+}
+
+.page-template-template-collection #collection-nav {
+  top: calc(50% + 12px);
+  transform: translateY(-50%);
+  @media (min-width: $screen-sm) {
+    top: 50%;
+  }
+  @media (min-width: $screen-md) {
+    top: calc(50% - 37px);
+  }
+}
+
+.page-template-template-collection-gallery #collection-nav {
+  bottom: 20%;
+  @media (min-width: $screen-sm) {
+    bottom: 25%;
+  }
+}

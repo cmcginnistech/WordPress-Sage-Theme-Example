@@ -1,0 +1,85 @@
+// ----------
+// Custom grid system
+// Utilizes bootstrap mixins
+// ----------
+.container {
+  @include container-fixed();
+  width: 100%;
+  max-width: $container-lg;
+}
+
+.row {
+  @include make-row();
+}
+
+.wrap {
+  max-width: $site-max-width;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  padding-top: $navbar-height;
+  background-color: $white;
+  // flex: 1; // Sticky footer.
+  flex: 1 0 auto; // Sticky footer (fixed for IE 11)
+
+  body.no-max-width & {
+    max-width: none;
+  }
+}
+
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+}
+
+// Re-positions a hero header behind the navbar.
+.offset-hero {
+  position: relative;
+  top: -$offset-hero-offset--mobile;
+  margin-bottom: -$offset-hero-offset--mobile;
+
+  @media (min-width: $screen-sm) {
+    top: -$offset-hero-offset--default;
+    margin-bottom: -$offset-hero-offset--default;
+  }
+}
+
+.container--no-gutter,
+.no-gutters > [class^="col-"],
+.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+// No outer gutter on xs (for columns).
+@media (max-width: $screen-xs-max) {
+  .no-gutters-xs {
+    margin-left: -$grid-gutter-width/2;
+    margin-right: -$grid-gutter-width/2;
+  }
+}
+
+$cols: 12;
+
+@for $each from 1 through $cols {
+  // Mobile column classes
+  .c#{$each} {
+    @include make-xs-column($each);
+  }
+  // Small column class
+  .cs#{$each} {
+    @include make-sm-column($each);
+  }
+  // Medium column class
+  .cm#{$each} {
+    @include make-md-column($each);
+  }
+  // Large column class
+  .cl#{$each} {
+    @include make-lg-column($each);
+  }
+  // Offset
+  .cso#{$each} {
+    @include make-sm-column-offset($each);
+  }
+}

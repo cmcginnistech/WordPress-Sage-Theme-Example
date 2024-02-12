@@ -1,0 +1,269 @@
+{
+    "key": "group_5963bc70e984b",
+    "title": "Press Header Content",
+    "fields": [
+        {
+            "key": "field_5963bc8edcf1d",
+            "label": "Main Content",
+            "name": "press_main_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5967952d602c2",
+            "label": "Media",
+            "name": "press_media",
+            "type": "flexible_content",
+            "instructions": "Optional. Supports either a Video or a Soundcloud.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "596795380c49e": {
+                    "key": "596795380c49e",
+                    "name": "video",
+                    "label": "Video",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_59679543602c3",
+                            "label": "Video Embed URL",
+                            "name": "video_embed_url",
+                            "type": "oembed",
+                            "instructions": "Please ensure the URL format looks like the one of the following examples below:\r\n<ul>\r\n<li>- <strong>For YouTube videos<\/strong>: https:\/\/www.youtube.com\/embed\/cBJyo0tgLnw where the ID at the end is your unique video id. This can be found by selecting 'Share' on a youtube video, then clicking on 'Embed'. You'll find this URL within the content presented.<\/li>\r\n<li>- <strong>For Vimeo videos<\/strong>: https:\/\/player.vimeo.com\/video\/109626219 where the ID at the end is your unique video id. This can be found by selecting 'Share' on a vimeo video (commonly seen on the right hand side), and by selecting the content within 'Embed'. You'll find the URL necessary towards the very beginning of that embed code inside src=\"\".<\/li>\r\n<\/ul>",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "width": "",
+                            "height": ""
+                        },
+                        {
+                            "key": "field_5967954c602c4",
+                            "label": "Video Caption",
+                            "name": "video_caption",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": "br"
+                        },
+                        {
+                            "key": "field_596bffb0895fd",
+                            "label": "Video Thumbnail",
+                            "name": "video_thumbnail",
+                            "type": "image",
+                            "instructions": "Minimum image width: 720 pixels.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": 720,
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5967955d602c5": {
+                    "key": "5967955d602c5",
+                    "name": "soundcloud",
+                    "label": "Soundcloud",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_596818bd47741",
+                            "label": "Soundcloud Embed",
+                            "name": "soundcloud_embed",
+                            "type": "oembed",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "width": "",
+                            "height": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Media",
+            "min": "",
+            "max": 1
+        },
+        {
+            "key": "field_59678eda90dac",
+            "label": "Links",
+            "name": "press_links",
+            "type": "flexible_content",
+            "instructions": "Optional. Supports 1 PDF download and 1 External Link.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "59678ee59aa04": {
+                    "key": "59678ee59aa04",
+                    "name": "pdf_download",
+                    "label": "PDF Download",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_59678f0790dad",
+                            "label": "PDF Download",
+                            "name": "pdf_download",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_59678f0f90dae",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "View as a PDF",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "1"
+                },
+                "59678f3090daf": {
+                    "key": "59678f3090daf",
+                    "name": "external_link",
+                    "label": "External Link",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_59678f3e90db0",
+                            "label": "Page URL",
+                            "name": "page_url",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59678f4790db1",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "text",
+                            "instructions": "*Source text will be appended after this text.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Read more at",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "*Source",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "1"
+                }
+            },
+            "button_label": "Add Link",
+            "min": "",
+            "max": 2
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "press"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1521813706
+}

@@ -1,0 +1,83 @@
+.page-header--exhb {
+  min-height: 0;
+
+  .hero-caption-content {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    text-align: left;
+
+    @media (min-width: $screen-sm) {
+      max-width: 50%;
+
+      &:after {
+        content: "";
+        background: transparent url("../images/icon/caret-royal.svg");
+        height: 12px;
+        width: 12px;
+        position: absolute;
+        left: -20px;
+        top: 3px;
+        transform: rotate(270deg);
+      }
+    }
+  }
+}
+
+.featured-exhibitions {
+  a {
+    color: $purple;
+    font-size: 1rem;
+  }
+  .tns-nav {
+    display: none;
+  }
+  .tns-controls {
+    position: relative;
+    z-index: 100;
+    top: 50%;
+    button[data-controls="next"],
+    button[data-controls="prev"] {
+      position: absolute;
+      right: 0px;
+      top: calc(50% - 20px);
+      left: initial;
+      width: initial;
+      opacity: 1;
+      color: transparent;
+      border: none;
+      height: 50px;
+      &:after,
+      &:before {
+        content: "";
+        display: block;
+        height: 0;
+        border-top: solid $periwinkle 2px;
+        width: 30px;
+        transition: white 0.2s ease-in;
+      }
+      &:before {
+        transform: rotate(225deg);
+      }
+      &:after {
+        transform: rotate(315deg);
+        top: 32px;
+        position: absolute;
+      }
+    }
+    button[data-controls="prev"] {
+      transform: scaleX(-1);
+      right: initial;
+      left: 0px;
+    }
+    @media (max-width: $screen-sm) {
+      button[data-controls="next"],
+      button[data-controls="prev"] {
+        top: 200px;
+      }
+    }
+  }
+}
+.exhibition-image-section {
+  font-weight: 100;
+}

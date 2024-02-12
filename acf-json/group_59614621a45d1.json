@@ -1,0 +1,140 @@
+{
+    "key": "group_59614621a45d1",
+    "title": "News & Media Settings",
+    "fields": [
+        {
+            "key": "field_596146365b60c",
+            "label": "Featured Posts (Landing Page)",
+            "name": "press_featured_posts",
+            "type": "relationship",
+            "instructions": "Select featured press posts for the News & Media landing page. These may be from any Exhibition or Category.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "press"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5b02f8333b95d",
+            "label": "Landing Page Navigation Categories",
+            "name": "landing_pg_nav_cats",
+            "type": "taxonomy",
+            "instructions": "Select the <a href=\"\/wp-admin\/edit-tags.php?taxonomy=press_category&post_type=press\" target=\"_blank\">press categories<\/a> for display in the landing page navigation. Ordering is reflected on front end.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "press_category",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
+            "key": "field_5b1ab8b32694e",
+            "label": "Landing Page Exhibitions",
+            "name": "landing_pg_exhibitions",
+            "type": "taxonomy",
+            "instructions": "Choose from existing <a href=\"\/wp-admin\/edit-tags.php?taxonomy=press_exhibition&post_type=press\" target=\"_blank\">press exhibitions<\/a>. Ordering is reflected on front end.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "press_exhibition",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
+            "key": "field_596e248613a0e",
+            "label": "Press Inquiries Page",
+            "name": "press_inquiries_page",
+            "type": "page_link",
+            "instructions": "Select the page for the Press Inquiries used on the News & Media landing page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
+        },
+        {
+            "key": "field_59681134cc055",
+            "label": "Texture Gallery",
+            "name": "press_texture_gallery",
+            "type": "gallery",
+            "instructions": "Upload fallback textures used for when a Press post does not have a Featured Image. A texture will be selected for each Press post at random and will only display on the archive filter pages.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "insert": "append",
+            "library": "all",
+            "min_width": 550,
+            "min_height": 550,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-news-media-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "Archive for press posts.",
+    "modified": 1528478044
+}

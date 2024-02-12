@@ -1,0 +1,179 @@
+.page-header {
+  border: 0;
+  margin: 0;
+  padding: 2.5rem 0 1.625rem 0;
+
+  @media (min-width: $screen-sm) {
+    padding: 5rem 0 2rem;
+
+    .post-type-archive & .row {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .post-type-archive-essay & .row {
+      display: block;
+    }
+  }
+}
+
+.page-title {
+  color: $brand-primary;
+  margin-top: 0;
+  margin-bottom: 2rem;
+
+  .post-type-archive & {
+    line-height: 0.8;
+  }
+  @media (min-width: $screen-sm) {
+    margin-bottom: 0;
+  }
+}
+
+.page-header--hero {
+  @extend .offset-hero;
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  background-color: $black;
+
+  &.no-image {
+    min-height: 0 !important;
+    .bg-cover {
+      background-color: $black;
+    }
+  }
+  @media (min-width: $screen-sm) {
+    min-height: 540px;
+
+    .single-press & {
+      min-height: 500px;
+    }
+  }
+}
+
+.page-header--portrait-in-oil {
+  padding-top: 68px;
+  background-color: white;
+  @media (max-width: $screen-sm) {
+    padding-top: 88px;
+    padding-bottom: 20px;
+  }
+  figure {
+    max-width: 325px;
+    width: 100%;
+  }
+}
+
+.page-header--hero figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.page-header--portrait-in-oil figure {
+  display: block !important;
+}
+
+.page-header--hero figcaption {
+  @extend .serif;
+  padding: 1rem 0;
+  font-size: 14px;
+  background-color: $light-gray;
+  text-align: center;
+  z-index: 10;
+
+  a {
+    text-decoration: underline;
+  }
+
+  strong {
+    @extend .sans-serif;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+  @media (min-width: $screen-sm) {
+    background-color: $white;
+    text-align: right;
+  }
+}
+
+.hero-content {
+  @include make-xs-column(12);
+  @include make-sm-column(8);
+  @include make-md-column(5);
+  @include antialiased();
+  padding-top: 15vh;
+  padding-bottom: 2rem;
+  color: $white;
+  font-size: 1.25rem;
+  font-weight: 400;
+  z-index: 5;
+
+  .site-logo {
+    max-width: 440px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  @media (min-width: $screen-sm) {
+    padding-top: 35vh;
+  }
+  @media (min-width: $screen-sm) and (min-height: 900px) {
+    padding-top: 360px;
+  }
+}
+
+.hero-content.hero-content--exhibition,
+.hero-content.hero-content--press {
+  h1 {
+    display: inline-block;
+    width: 100%;
+  }
+  h1:after {
+    content: "";
+    display: block;
+    height: 2px;
+  }
+}
+
+.hero-content.hero-content--exhibition {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  @include make-md-column(5);
+  @include make-md-column-offset(1);
+
+  h1:after {
+    background-color: $periwinkle;
+    margin: 1rem 0;
+  }
+  @media (min-width: $screen-sm) {
+    padding-top: 22vh;
+    padding-bottom: 22vh;
+  }
+}
+
+.page-template-template-exhibitions {
+  .bg-cover-overlay:after {
+    height: 25vh;
+  }
+}
+
+.hero-content.hero-content--press {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  font-size: 14px;
+  @include make-md-column(6);
+
+  h1:after {
+    background-color: $royal-blue;
+    width: 64px;
+  }
+  @media (min-width: $screen-sm) {
+    padding-top: 16vh;
+    padding-bottom: 16vh;
+  }
+}

@@ -1,0 +1,113 @@
+{
+    "key": "group_594028876ec7b",
+    "title": "Exhibition Graphics",
+    "fields": [
+        {
+            "key": "field_594028b7739f4",
+            "label": "Note",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "These graphics and info are pulled into other places when an Exhibition is displayed throughout the site.",
+            "new_lines": "br",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5940289f739f3",
+            "label": "Exhibition Graphic (normal)",
+            "name": "exhibition_graphic",
+            "type": "image",
+            "instructions": "Currently used on the homepage.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_59b7fc831dcb7",
+            "label": "Exhibition Graphic (light)",
+            "name": "exhibition_graphic_light",
+            "type": "image",
+            "instructions": "Currently used on the Previous Exhibitions template.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_59b00608b1ce1",
+            "label": "Exhibition Graphic (dark)",
+            "name": "exhibition_graphic_dark",
+            "type": "image",
+            "instructions": "Currently used on the Previous Exhibitions template.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "exhibition"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1519071803
+}

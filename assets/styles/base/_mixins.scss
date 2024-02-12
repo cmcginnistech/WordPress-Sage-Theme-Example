@@ -1,0 +1,32 @@
+@mixin antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin overlay {
+  &:after {
+    background-color: transparentize($brand-primary, 0.3);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    content: "";
+    transition: opacity 0.3s ease-in-out 0s;
+  }
+}
+@mixin icon {
+  &:after {
+    position: absolute;
+    right: 0.5rem;
+    top: calc(50% - 6px);
+    content: "";
+    background: transparent url(../images/icon/caret-right.svg) right center
+      no-repeat;
+    height: 12px;
+    width: 12px;
+  }
+}

@@ -1,0 +1,62 @@
+{
+    "key": "group_5a7ca57a2241d",
+    "title": "Theme Options",
+    "fields": [
+        {
+            "key": "field_5b6872a3b697c",
+            "label": "About IIIF Text",
+            "name": "about_iiif_text",
+            "type": "textarea",
+            "instructions": "Appears in the IIIF tooltip within the viewer.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 5,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_5b68730bb697d",
+            "label": "IIIF Manifest Description Text",
+            "name": "iiif_manifest_description_text",
+            "type": "textarea",
+            "instructions": "Displays in the IIIF manifest for artworks.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 5,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1586464042
+}

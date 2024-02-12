@@ -1,0 +1,38 @@
+.single-essay #essay .components-wrapper {
+  blockquote {
+    font-size: 16px;
+    padding-left: 40px;
+    & + p {
+      &:before {
+        display: none;
+      }
+    }
+  }
+  counter-reset: paragraph;
+  *:not(.inline-ref-content):not(blockquote) {
+    > p {
+      position: relative;
+
+      /*&:before,*/
+      .js-count {
+        position: absolute;
+        top: 5px;
+        right: calc(100% + #{$grid-gutter-width} / 2);
+        font-family: $serif;
+        font-size: 13px;
+        line-height: 1;
+        color: $wild-blue;
+        content: counter(paragraph);
+        counter-increment: paragraph;
+      }
+    }
+  }
+
+  .entry-content {
+    padding-left: $grid-gutter-width * 1.25;
+
+    @media (min-width: $screen-md) {
+      padding-left: $grid-gutter-width / 2;
+    }
+  }
+}

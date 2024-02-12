@@ -1,0 +1,185 @@
+// Generates single-purpose utility classes.
+$font-sizes: (
+  root-xs: $size-root-xs,
+  root: $size-root,
+  root-2x: $size-root * 2,
+  h4: $size-h4,
+  h3: $size-h3,
+  h2: $size-h2,
+  h1: $size-h1,
+  h1-plus: $size-h1-plus,
+  yuge: $size-yuge,
+);
+
+$font-styles: (
+  normal: normal,
+  italic: italic,
+);
+
+@each $key, $val in $font-styles {
+  .text-#{$key} {
+    font-style: $val;
+  }
+}
+
+@each $key, $val in $font-sizes {
+  .size-#{$key} {
+    font-size: $val;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .size-root-xs-ns {
+    font-size: $size-root-xs;
+  }
+  .size-root-ns {
+    font-size: $size-root;
+  }
+  .size-root-2x-ns {
+    font-size: $size-root * 2;
+  }
+  .size-h4-ns {
+    font-size: $size-h4;
+  }
+  .size-h3-ns {
+    font-size: $size-h3;
+  }
+  .size-h2-ns {
+    font-size: $size-h2;
+  }
+  .size-h1-ns {
+    font-size: $size-h1;
+  }
+  .size-h1-plus-ns {
+    font-size: $size-h1-plus;
+  }
+  .size-yuge-ns {
+    font-size: $size-yuge;
+  }
+}
+
+// Loaded Web Fonts
+.wf-active {
+  body,
+  .sans-serif {
+    font-family: "Montserrat", $sans-serif;
+  }
+
+  .serif {
+    font-family: "Crimson Text", $serif;
+    @include antialiased();
+  }
+  h3 .inline-ref-content {
+    font-family: "Montserrat", $sans-serif;
+    font-weight: normal;
+    -webkit-font-smoothing: auto;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend .serif;
+
+  > a {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.heading-reset {
+  margin: 0;
+  padding: 0;
+}
+
+.single-exhibition .entry-content h2 {
+  @extend .size-h1;
+  margin-top: 0;
+}
+
+.section-title-link {
+  position: relative;
+  display: inline-block;
+  color: $brand-primary;
+  padding-bottom: 0.5rem;
+  &:before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    width: 200px;
+    border-bottom: 2px solid $periwinkle;
+    transition: border-color 0.3s ease-in-out;
+  }
+  &:hover,
+  &:focus {
+    &:before {
+      border-color: $royal-blue;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    max-width: 225px;
+  }
+}
+
+.section-title-underline {
+  border-bottom: 2px solid darken($light-gray, 5%);
+}
+
+.bold,
+.strong {
+  font-weight: bold;
+}
+
+.thin {
+  font-weight: 300;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.color-stormy {
+  color: $storm-gray;
+}
+
+.color-gray {
+  color: $mid-gray;
+}
+
+.entry-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-bottom: 1.5rem;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  h1 {
+    font-size: $size-h1;
+  }
+  h2 {
+    font-size: $size-h2;
+  }
+  h3 {
+    font-size: $size-h3;
+  }
+  h4 {
+    font-size: $size-h4;
+  }
+  p {
+    line-height: 1.6;
+    @media (min-width: $screen-sm) {
+      line-height: 1.75;
+    }
+  }
+}

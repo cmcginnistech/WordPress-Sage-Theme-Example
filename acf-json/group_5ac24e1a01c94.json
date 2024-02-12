@@ -1,0 +1,43 @@
+{
+    "key": "group_5ac24e1a01c94",
+    "title": "Videos Additional Thanks To",
+    "fields": [
+        {
+            "key": "field_5ac24e2a37c47",
+            "label": "\"Additional Thanks To\" Content",
+            "name": "additional_thanks_to_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-additional-thanks"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1522683467
+}

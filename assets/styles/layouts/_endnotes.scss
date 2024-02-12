@@ -1,0 +1,67 @@
+.styled-ordered-list,
+.styled-unordered-list {
+  li p:last-child {
+    margin-bottom: 0;
+  }
+  li {
+    margin-bottom: 1rem;
+    list-style: none;
+    position: relative;
+    line-height: 1.6;
+  }
+  li:before {
+    position: absolute;
+    color: $royal-blue;
+    left: -1.375rem;
+  }
+}
+
+.styled-ordered-list {
+  counter-reset: i;
+
+  li:before {
+    content: "."counter(i);
+    counter-increment: i;
+    font-weight: bold;
+    width: 1px;
+    direction: rtl;
+    text-align: right;
+  }
+}
+
+.styled-unordered-list {
+  li:before {
+    content: '●';
+    font-size: .5rem;
+    top: .3125rem;
+  }
+}
+
+.endnote-list {
+  @media (max-width: $screen-sm - 1) {
+    padding-top: 2rem;
+  }
+}
+
+ul.endnote-list,
+.endnote-list ul,
+.tab-pane-content ul {
+  @extend .styled-unordered-list;
+}
+
+ol.endnote-list,
+.endnote-list ol,
+.tab-pane-content ol {
+  @extend .styled-ordered-list;
+}
+
+// this is an inline ref container that appears in entry content
+// where comp figs or endnotes are used.
+.endnote {
+  position: relative;
+  display: none;
+
+  &.open {
+    display: block;
+  }
+}

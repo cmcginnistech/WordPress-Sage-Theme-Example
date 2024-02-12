@@ -1,0 +1,26 @@
+.how-to-cite {
+  p {
+    line-height: 1.6;
+    color: $purple;
+    margin-bottom: 0.625rem;
+    font-size: 0.975rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .cite-footer,
+  .cite-footer p {
+    font-size: 0.75rem;
+    color: $mid-gray;
+  }
+  .btn svg path {
+    fill: $purple;
+  }
+}
+
+.how-to-cite-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+}

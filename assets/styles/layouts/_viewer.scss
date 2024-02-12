@@ -1,0 +1,261 @@
+$viewer-bg-color: #000;
+
+@media (max-width: $screen-sm) {
+  #viewerZoom,
+  #viewerModes {
+    display: none;
+  }
+}
+
+.page-template-template-viewer {
+  .wrap {
+    padding: 0;
+    max-width: none;
+    background-color: $viewer-bg-color;
+  }
+  .navbar {
+    background-color: $viewer-bg-color;
+    z-index: 99999;
+    .container {
+      max-width: none;
+    }
+  }
+  .main {
+    height: calc(100vh - 80px);
+    padding: 0;
+    margin-top: 130px;
+
+  }
+  &.admin-bar .main {
+    height: calc(100vh - (32px + 80px));
+  }
+  @media (max-width: $screen-sm - 1) {
+    .navbar-header {
+      float: left;
+      width: 20%;
+    }
+  }
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  // CSS specific to iOS Safari
+  body.page-template-template-viewer {
+    display: block;
+    min-height: auto;
+    background-color: $viewer-bg-color;
+  }
+  .page-template-template-viewer .main {
+    height: calc(100vh - 80px - 76px); // allowance for bottom browser bar
+  }
+}
+
+.viewer-container {
+  height: 100%;
+  background-color: $viewer-bg-color;
+}
+
+.viewer-nav {
+  padding: 22px 0;
+  width: calc(80% + 30px); // allowance for neg margins
+  float: left;
+  text-align: right;
+
+  @media (min-width: $screen-sm) {
+    text-align: center;
+    float: none;
+    padding: 21px 0;
+    width: calc(100% - 50px); // logo allowance
+  }
+}
+
+.viewer-nav,
+.viewer-bottom-controls {
+  button {
+    @extend .sans-serif;
+    background: none;
+    border: none;
+    color: white;
+    display: inline-block !important;
+    padding: 0 2px;
+    width: auto !important;
+    &:hover {
+      color: rgba(255,255,255,0.6);
+    }
+    &:focus {
+      color: white;
+    }
+  }
+  .form-group {
+    margin: 0;
+  }
+  .control-label {
+    color: white;
+    font-size: 0.875rem;
+    padding-right: 12px;
+  }
+}
+
+.viewer-nav .menu-section,
+.viewer-bottom-controls .menu-section {
+  display: inline-block;
+  border-right: 2px solid rgba(255,255,255,0.3);
+  padding: 0 20px;
+  margin-left: -4px;
+
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    border: none;
+    padding-right: 0;
+  }
+}
+
+.viewer-nav .view-trigger {
+  border: 2px solid transparent;
+  margin-right: 6px;
+  padding: 0 2px;
+  min-width: 36px;
+  height: 36px;
+  text-align: center;
+  font-weight: bold;
+
+  &:focus, &:hover {
+    color: white;
+  }
+  &:hover {
+    background-color: $royal-blue;
+  }
+  &.active,
+  &.active:focus {
+    border-color: white;
+    background-color: $royal-blue;
+    color: white;
+  }
+  &:last-child {
+    margin: 0;
+  }
+  @media (min-width: $screen-sm) {
+    min-width: 24px;
+    max-width: 28px;
+    height: 24px;
+  }
+}
+
+.viewer-info .tooltipstered {
+  border: none !important;
+}
+
+.mode-trigger.mode-syncs,
+.mode-trigger.mode-curtain {
+  svg g {
+    stroke-width: 1px;
+  }
+  &.active {
+    svg g {
+      stroke-width: 2px;
+    }
+    .notch {
+      display: none;
+    }
+    .first {
+      fill: $royal-blue;
+    }
+  }
+}
+
+.viewer-bottom-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+
+  .artist {
+    @extend .serif;
+    @extend .size-h2;
+    color: $moody-blue;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    color: white;
+  }
+  .container {
+    max-width: $site-max-width;
+  }
+  .panel-body {
+    padding-bottom: 60px;
+  }
+  .panel-body a {
+    color: $moody-blue;
+  }
+  &,
+  .tombstone {
+    color: white;
+  }
+  .menu-section {
+    width: 50%;
+  }
+  @media (min-width: $screen-sm) {
+    bottom: 50px;
+
+    .panel-body {
+      padding-bottom: 40px;
+    }
+    .menu-section {
+      border: none;
+    }
+  }
+}
+
+.viewer-overlay {
+  position: absolute;
+  background-color: transparentize($viewer-bg-color, .2);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+
+  &.on {
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+
+.viewer-details-btn {
+  @extend .sans-serif;
+  color: white;
+  background: none;
+  border: none;
+  font-weight: bold;
+  padding: 0;
+
+  g,
+  path {
+    fill: $moody-blue;
+  }
+  &.collapsed g,
+  &.collapsed path {
+    fill: white;
+  }
+}
+
+.viewer-zoom-controls {
+  .btn {
+    width: 24px;
+  }
+  .viewer-bottom-controls & {
+    text-align: right;
+  }
+}
+
+.viewer-iiif-tooltip {
+  input[type=text] {
+    border-radius: 0;
+    background-color: $light-gray;
+    cursor: default !important;
+  }
+}

@@ -1,0 +1,237 @@
+.masonry,
+.masonry--grid,
+.cards {
+  margin: 0;
+}
+
+.masonry--grid-sizer,
+.masonry--item,
+.masonry--item-2x {
+  width: 100%;
+  margin: 0 8px 16px 0;
+}
+
+.card--exhibition {
+  width: 100%;
+  margin-bottom: 16px;
+  background-color: white;
+  color: $purple;
+}
+
+.item,
+.card--exhibition {
+  float: left;
+}
+
+.card--exhibition .pad-inner {
+  padding: 2rem 1rem;
+}
+
+.card--exhibition .pad-inner--2x {
+  padding: 4rem 2rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.card-overlay {
+  display: flex;
+  color: $brand-primary;
+  background-color: $white;
+}
+
+.card-overlay {
+  position: relative;
+  width: 100%;
+  background-color: $white;
+  transition: all 0.3s ease-in-out;
+  z-index: 0;
+
+  h3 {
+    color: inherit;
+  }
+}
+
+.card-overlay--light,
+.card-overlay--dark {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card-overlay--light {
+  opacity: 1;
+  background-color: $white;
+}
+
+.card-overlay--dark {
+  opacity: 0;
+  background-color: $storm-gray;
+}
+
+.card-overlay:hover,
+.card-overlay:focus {
+  background-color: $storm-gray;
+  color: $white;
+  text-decoration: none;
+
+  .card-overlay--light {
+    opacity: 0;
+  }
+
+  .card-overlay--dark {
+    opacity: 1;
+  }
+}
+
+.card--exhibition time > em {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.25rem;
+  margin-top: 0.25rem;
+
+  &:after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: darken($mid-gray, 5%);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.card-center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 2rem;
+}
+
+.masonry-row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+@media (min-width: 576px) {
+  .masonry--grid,
+  .cards {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+
+  .masonry--grid-sizer,
+  .masonry--item,
+  .masonry--item-2x,
+  .card--exhibition {
+    margin: 8px;
+  }
+
+  .masonry--grid-sizer,
+  .masonry--item,
+  .masonry--item-2x {
+    width: calc(50% - 16px);
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .masonry--grid-sizer,
+  .masonry--item,
+  .card--exhibition {
+    width: calc(33.333333% - 16px);
+  }
+
+  .cards--center {
+    justify-content: center;
+  }
+
+  .card.card--half {
+    width: calc(50% - 16px);
+  }
+
+  .card-center-content {
+    padding: 6rem 2rem;
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .masonry--grid-sizer,
+  .masonry--item,
+  .card--exhibition {
+    width: calc(25% - 16px);
+  }
+
+  .masonry--item-2x {
+    width: calc(50% - 16px);
+  }
+}
+
+.masonry--item {
+  position: relative;
+  overflow-x: hidden;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to right,
+      transparentize($gray-dark, 0.25),
+      transparentize($gray-dark, 1)
+    );
+    content: "";
+    z-index: 5;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+
+    @media (min-width: $screen-sm) {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (min-width: $screen-sm) and (max-width: 900px) {
+    // small window where we start running out of space in cards
+    // due to size of long titles.
+    font-size: .8rem;
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .masonry--item h2 {
+    font-size: 1.4rem;
+  }
+
+  .masonry--item-2x h2 {
+    font-size: $size-h3;
+  }
+}
+
+.masonry--item .item--details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  padding: 1rem;
+  z-index: 10;
+}

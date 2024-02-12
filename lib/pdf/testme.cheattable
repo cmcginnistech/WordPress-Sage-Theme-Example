@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable>
+<CheatEntries>
+<CheatEntry>
+<ID>53</ID>
+<Description>"Bullet damage"</Description>
+<LastState/>
+<VariableType>Auto Assembler Script</VariableType>
+<AssemblerScript>{ Game : Palworld-Win64-Shipping.exe
+Version:
+Date : 2024-01-22
+Author : Stevenhake
+
+This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(INJECT,Palworld-Win64-Shipping.exe,89 91 B4 02 00 00 C3) // should be unique
+alloc(newmem,$1000,INJECT)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+mov edx,(int)10000 //set to the damage
+mov [rcx+Palworld-Win64-Shipping.Chaos::GThreadLockCheckData+14],edx
+jmp return
+
+INJECT:
+jmp newmem
+nop
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+db 89 91 B4 02 00 00
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+</AssemblerScript>
+</CheatEntry>
+</CheatEntries>
+</CheatTable>

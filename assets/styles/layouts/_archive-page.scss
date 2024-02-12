@@ -1,0 +1,214 @@
+.page-template-template-archive {
+  .wrap {
+    overflow: initial;
+  }
+  .archive-tab__column-right {
+    margin-bottom: 20px;
+    .archive-tab__single-artwork {
+      margin-bottom: 16px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+      &:nth-child(odd) {
+        clear: both;
+      }
+      .artwork-inventory {
+        font-weight: bold;
+        font-size: 0.5em;
+        color: $storm-gray;
+        @extend .sans-serif;
+      }
+    }
+    @media (min-width: $screen-sm) {
+      border-left: 2px solid $light-gray;
+      margin-bottom: 4rem;
+      .archive-tab__single-artwork {
+        margin-bottom: 32px;
+      }
+    }
+  }
+  .archive-header__column-right {
+    color: white;
+    @media (min-width: $screen-sm) {
+      border-left: 2px solid $royal-blue;
+    }
+    p:last-child {
+      margin-bottom: 0px;
+    }
+    .btn-collapse {
+      color: white;
+      display: none;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background-color: darken($purple, 5);
+      text-transform: uppercase;
+      font-weight: bold;
+      @extend .sans-serif;
+      path {
+        fill: white;
+      }
+    }
+    .cite-label {
+      color: white;
+      font-size: 16px;
+    }
+    @media (max-width: $screen-sm) {
+      .btn-collapse {
+        display: flex;
+      }
+      #howToCite {
+        background-color: white;
+        color: $purple;
+        .cite-label {
+          color: $purple;
+          font-weight: bold;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  #archive-tab {
+    text-align: center;
+    border: 0;
+    @media (min-width: $screen-lg) {
+      text-align: left;
+    }
+    > li {
+      margin-right: 2px;
+      > a {
+        background-color: darken($brand-primary, 5);
+        border-width: 0px !important;
+        color: $periwinkle;
+        @include antialiased();
+      }
+      &.active {
+        margin-left: -4px;
+        > a {
+          background-color: white;
+          border-width: 0px !important;
+          color: $purple;
+        }
+      }
+    }
+  }
+
+  .tab-content,
+  .panel-group {
+    h2,
+    h3 {
+      color: $purple;
+      margin-top: 0;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      a {
+        text-decoration: underline;
+        &:hover {
+          color: $purple;
+        }
+      }
+    }
+    hr {
+      border-top: 2px solid $gray-lighter;
+    }
+  }
+  .panel-group {
+    .panel-title {
+      margin: 0px -15px 15px -15px;
+      padding: 20px 15px;
+      background-color: $gray-lighter;
+      font-weight: bold;
+      position: relative;
+      a {
+        color: $purple;
+        &:hover {
+          color: $royal-blue;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          right: 10px;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: transparent url("../images/icon/minus-circle.svg") 98%
+            center no-repeat;
+        }
+        &.collapsed {
+          &:after {
+            background: transparent url("../images/icon/plus-circle.svg") 98%
+              center no-repeat;
+          }
+        }
+      }
+    }
+  }
+  .panel-body {
+    padding: 10px 0;
+  }
+
+  .nav-tabs {
+    justify-content: flex-start;
+  }
+}
+
+.archive-background-wrapper {
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+  @media (min-width: $screen-sm) {
+    margin-bottom: -49px;
+    padding-bottom: 50px;
+  }
+  h1 {
+    color: white;
+    margin-top: 0px;
+  }
+}
+
+.archive-essay__author {
+  font-size: 1.4em;
+  color: $storm-gray;
+}
+
+.archive-artist {
+  @media (min-width: $screen-sm) {
+    margin-bottom: 4rem;
+  }
+}
+
+.archive-artist__letter-wrapper {
+  position: sticky;
+  top: 5px;
+  float: left;
+}
+
+.archive-artist__artists-wrapper {
+  border-left: 2px solid $light-gray;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 15px;
+  @media (min-width: $screen-sm) {
+    padding-left: calc(4rem + 15px);
+  }
+}
+
+.archive-artist__single-artist {
+  flex-basis: 100%;
+  margin-bottom: 2rem;
+  &:last-child {
+    margin-bottom: 0px;
+  }
+  @media (min-width: $screen-sm) {
+    flex-basis: 50%;
+    padding-right: 15px;
+  }
+  @media (min-width: $screen-md) {
+    flex-basis: 33.33%;
+  }
+}
+
+.archive-pg-cite {
+  color: $wild-blue;
+}

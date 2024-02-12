@@ -1,0 +1,112 @@
+/*
+Print CSS for PDF Gen
+*/
+body {
+    color: #333333;
+    /*font-family: 'Open Sans', 'Avenir LT W01 45 Roman', Arial, Helvetica, sans-serif;*/
+    font-size: 11pt;
+}
+p,li {
+    color: #333333;
+    margin-top: 0;
+    font-size: 11pt;
+    line-height: 18pt;
+    font-weight: 300;
+    text-align: justify;
+}
+img{
+    max-width: 100%;
+}
+.title{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10pt;
+}
+h3{
+    font-size: 14pt;
+}
+a{
+    color: #404040;
+    text-decoration: none;
+}
+.container{
+    width: 100%;
+}
+/**br - for vertical spacing**/
+div.ten-px{
+    font-size: 10pt;
+}
+/**table styling**/
+table td{
+    vertical-align: top;
+}
+table td.border-left{
+    border-left: 1px solid #333;
+}
+/**artwork specific**/
+.top-image{
+    margin-bottom: 21pt;
+}
+.artist-info{
+    margin-top: 0;
+}
+div.fig-title{
+    font-weight: bold;
+}
+p.fig-img{
+    margin-bottom: 1pt;
+}
+p.caption,
+.caption{
+    font-size: 9pt;
+    line-height: 11pt;
+    margin-bottom: 10pt;
+    text-align: left;
+}
+div.tab-title,
+p.tab-title{
+    font-weight: bold;
+    font-size: 14pt;
+    margin-bottom: 10pt;
+    margin-top: 20pt;
+}
+div.tab-sub-title{
+    font-weight: bold;
+    font-size: 12pt;
+}
+.endnotes-holder p,
+li.remark{
+    font-size: 11pt;
+}
+sup.endnote-num {
+    font-weight: bold;
+    font-size: 7pt;
+    color: #000;
+}
+span.fig-num,
+span.inline-fig-ref {
+    font-weight: bold;
+}
+span.endnote-reset{
+    font-size:11pt;
+}
+.wp-caption{
+    margin:0 auto;
+    text-align: center;
+}
+.wp-caption-text{
+    font-size: 11pt;
+    margin-top: 5pt;
+}
+.visible-sm{
+    display: none;
+}
+.sr-only {
+    display: none;
+}
+.tombstone p {
+    margin-bottom: 0 !important;
+}
+.tombstone {
+    line-height: 18pt;
+}

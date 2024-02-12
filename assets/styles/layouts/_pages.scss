@@ -1,0 +1,62 @@
+.section-full {
+  position: relative;
+  background-color: #202020;
+  overflow-x: hidden;
+}
+
+.list-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 1.25;
+
+  > li {
+    padding: 0 1rem;
+  }
+
+  > li:not(:last-child) {
+    border-right: 2px solid transparentize($white, 0.7);
+  }
+
+  a {
+    font-size: 1.125rem;
+    color: transparentize($light-gray, 0.4);
+    font-weight: 600;
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
+}
+
+.row__border-bottom {
+  @media (max-width: $screen-sm) {
+    border-bottom: 2px solid $lighter-gray;
+  }
+}
+
+.page-template-template-portrait-in-oil {
+  .entry-header {
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    @media (min-width: $screen-md) {
+      h1 {
+        padding-left: 48px;
+      }
+    }
+  }
+  .entry-header:before {
+    content: "";
+    display: block;
+    margin: -2rem 0 3rem 0;
+    height: 2px;
+    background-color: $lighter-gray;
+  }
+  .entry-attribution {
+    margin-bottom: 4rem;
+    @media (min-width: $screen-sm) {
+      margin-bottom: 7rem;
+    }
+  }
+}
